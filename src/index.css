@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light mode: A light cream or off-white background with navy and soft orange elements.
+Dark mode: A deep navy or charcoal background with soft orange for accents and text. */
+
+/* Root normal colors */
+:root {
+  --background: #c9c7c7;
+  --foreground: #1e1e1e;
+}
+
+/* Dark mode colors */
+.dark {
+  --background: #1e1e1e;
+  --foreground: #c9c7c7;
+}
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-lato: "Lato", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@layer base {
+  h1 {
+    @apply text-foreground text-2xl sm:text-4xl md:text-5xl;
+  }
+  h2 {
+    @apply text-foreground text-lg sm:text-2xl md:text-3xl;
+  }
+}
+
+/* Custom utilities */
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@utility custom-shadow {
+  box-shadow: 2px 5px 10px #16171b4f;
+}
+
+@utility custom-shadow-hover {
+  box-shadow: 2px 5px 20px #16171b4f;
+}
+
+@utility margin-top {
+  @apply sm:mt-28 mt-24
+}
+
+/* Components */
+@layer components {
+  .social-button {
+    @apply w-36 md:w-40 ring-1 ring-slate-900/40 bg-white hover:scale-102 custom-shadow hover:custom-shadow-hover transition-all max-sm:w-full cursor-pointer;
+  }
+
+  .nav-bar {
+    @apply bg-foreground fixed top-2.5 left-2.5 right-2.5 flex items-center justify-between pr-5 rounded-xl h-11 custom-shadow z-[100] transition-all duration-350 ease-in-out;
+
+    /* When the nav bar needs to be hidden */
+    &.hide {
+      @apply -translate-y-[200%] opacity-0 pointer-events-none;
+    }
+
+    /* When the nav bar needs to be shown */
+    &.show {
+      @apply translate-y-0 opacity-100;
+    }
+
+    /* Links to pages */
+    & .links {
+      @apply space-x-3 sm:space-x-6 ml-6;
+    }
+
+    /* Style for Link tags inside nav-bar */
+    & a {
+      @apply text-background text-[16px] sm:text-lg font-lato;
+    }
+
+    & .theme-switch {
+      @apply ring-1 relative w-14 h-6 rounded-full transition-colors duration-300 cursor-pointer custom-shadow;
+    }
+  }
+
+  .about-card {
+    @apply m-8 rounded-lg ring-1 ring-slate-900/8 dark:ring-slate-100/15 p-6 shadow-xl shadow-slate-900/10 dark:shadow-slate-100/10 flex flex-col;
+
+    & .icon-card {
+      @apply mt-4 flex-center w-12 h-12 items-center text-3xl rounded-full ring-1 ring-slate-900/10 shadow-[inset_1px_1px_3px_rgba(0,0,0,0.3)] dark:ring-slate-100/20 dark:shadow-[inset_1px_2px_4px_rgba(253,251,252,0.3)];
+    }
+
+    & h2 {
+      @apply text-center font-lato font-bold mb-6 mt-6 md:text-2xl;
+    }
+
+    & p {
+      @apply leading-relaxed flex flex-grow items-center text-justify;
+    }
+  }
+}
+
+html,
+body {
+  height: 100vh;
+  background-color: var(--background);
+  font-family: var(--font-roboto);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
