@@ -55,6 +55,10 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
   @apply sm:mt-28 mt-24
 }
 
+@utility custom-cursor {
+  cursor: url("/koala.svg"), auto;
+}
+
 /* Components */
 @layer components {
   .social-button {

@@ -2,8 +2,23 @@ import AboutCard from "../custom/AboutCard";
 
 const About = () => {
   return (
-    <div className="margin-top grid grid-rows-4 text-foreground md:grid md:grid-cols-2 md:grid-rows-2">
+    <div className="mt-24 grid grid-rows-4 text-foreground md:grid md:grid-cols-2 md:grid-rows-2">
       <AboutCard
+        imgPath="/koala.svg"
+        title="About Me"
+        text={
+          <p>
+            I'm a software developer and bioinformatician with a background in computational biology. I enjoy working where science meets software and love solving real problems with code. 
+            My experience taught me to think carefully about data and to build tools that are fast, clean, and genuinely useful (or at least make someone smile).
+            <br />
+            <br />I'm curious by nature and always eager to learn. I enjoy reading about finance and personal growth, spending time outdoors, hanging out with friends, or staying active with kickboxing. 
+            <br />
+            <br />I love exploring what fascinates me, diving into new technologies, and following my curiosity wherever it leads.
+          </p>
+        }
+      />
+
+      {/* <AboutCard
         icon="🐨"
         title="About Me"
         text={
@@ -24,12 +39,12 @@ const About = () => {
             who use them.
           </p>
         }
-      />
+      /> */}
 
       <AboutCard
         icon="💡"
         title="Personal Interests"
-        link="/projects"
+        // link="/projects"
         text={
           <p>
             I'm a curious person who loves learning new things. I like reading
@@ -46,7 +61,7 @@ const About = () => {
       <AboutCard
         icon="🎓"
         title="Academic Background"
-        link="/studies"
+        // link="/studies"
         text={
           <p>
             During my studies, I focused on computational biology, data science,
@@ -66,7 +81,7 @@ const About = () => {
       <AboutCard
         icon="👨‍💻"
         title="Professional Experience"
-        link="/experiences"
+        // link="/experiences"
         text={
           <p>
             I worked as a Bioinformatics Software Developer at 3Brain AG, where

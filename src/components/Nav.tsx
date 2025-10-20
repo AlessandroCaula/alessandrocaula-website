@@ -41,11 +41,11 @@ const Nav = () => {
   }, []);
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/studies", label: "Studies" },
-    { to: "/experiences", label: "Experiences" },
-    { to: "/projects", label: "Projects" },
+    { to: "#home", label: "Home" },
+    { to: "#about", label: "About" },
+    { to: "#studies", label: "Studies" },
+    { to: "#experiences", label: "Experiences" },
+    { to: "#projects", label: "Projects" },
   ];
 
   return (
@@ -53,9 +53,16 @@ const Nav = () => {
       {/* Desktop menu */}
       <div className="links hidden sm:flex">
         {navLinks.map((link) => (
-          <Link key={link.to} to={link.to}>
+          // With routing
+          //
+          // <Link key={link.to} to={link.to}>
+          //   {link.label}
+          // </Link>
+
+          // With Vertical Scrolling
+          <a key={link.to} href={link.to}>
             {link.label}
-          </Link>
+          </a>
         ))}
       </div>
 
@@ -80,7 +87,9 @@ const Nav = () => {
             <BiLeftArrowCircle className="h-8 w-9" />
           </SheetClose>
 
-          <div className="flex flex-col space-y-6 margin-top">
+          {/* With Routing */}
+          {/*  */}
+          {/* <div className="flex flex-col space-y-6 margin-top">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -90,6 +99,19 @@ const Nav = () => {
               >
                 {link.label}
               </Link>
+            ))} */}
+
+          {/* Vertical Scrolling */}
+          <div className="flex flex-col space-y-6 margin-top">
+            {navLinks.map((link) => (
+              <a
+                key={link.to}
+                href={link.to}
+                className="text-background text-lg font-lato ml-8"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </a>
             ))}
           </div>
         </SheetContent>

@@ -16,7 +16,7 @@ const Home = () => {
         src={isDark ? DarkModeProfilePic : LightModeProfilePic} 
         alt="Alessandro Caula Picture" 
       />
-      <h1 className='sm:mt-18 mt-12'>Hey! I'm <span className='font-inter'>Alessandro Caula</span></h1>
+      <h1 className='sm:mt-18 mt-12'>Hi! I'm <span className='font-inter'>Alessandro Caula</span></h1>
       <h2 className='font-inter sm:mt-8 mt-6 font-light'>Software Developer and Bioinformatician</h2>
 
       <div className='mt-14 sm:mt-20 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-4 max-sm:px-4'>
