@@ -96,8 +96,12 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
   .about-card {
     @apply m-8 rounded-lg ring-1 ring-slate-900/8 dark:ring-slate-100/15 p-6 shadow-xl shadow-slate-900/10 dark:shadow-slate-100/10 flex flex-col;
 
-    & .icon-card {
+    /* & .icon-card {
       @apply mt-4 flex-center w-12 h-12 items-center text-3xl rounded-full ring-1 ring-slate-900/10 shadow-[inset_1px_1px_3px_rgba(0,0,0,0.3)] dark:ring-slate-100/20 dark:shadow-[inset_1px_2px_4px_rgba(253,251,252,0.3)];
+    } */
+
+    & .icon-card {
+      @apply mt-4 flex-center w-12 h-12 items-center text-3xl rounded-full ring-1 ring-slate-900/10 shadow-[2px_4px_10px_rgba(0,0,0,0.2)] dark:ring-slate-100/20 dark:dark:shadow-[2px_3px_6px_rgba(253,251,252,0.3)];
     }
 
     & h2 {

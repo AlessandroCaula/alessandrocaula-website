@@ -2,7 +2,7 @@ import AboutCard from "../custom/AboutCard";
 
 const About = () => {
   return (
-    <div className="mt-24 grid grid-rows-4 text-foreground md:grid md:grid-cols-2 md:grid-rows-2">
+    <div className="mt-24 grid grid-rows-4 text-foreground md:grid md:grid-cols-1 md:grid-rows-4">
       <AboutCard
         imgPath="/koala.svg"
         title="About Me"
