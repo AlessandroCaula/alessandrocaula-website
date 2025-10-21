@@ -10,7 +10,7 @@ import Experiences from "./components/pages/Experiences";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col max-w-6xl mx-auto">
       <Nav />
 
       {/* With routing */}
@@ -25,7 +25,7 @@ const App = () => {
       </main> */}
 
       {/* Vertical Scroll */}
-      <main className="flex-grow">
+      <main className="space-y-20">
         <section id="home">
           <Home />
         </section>

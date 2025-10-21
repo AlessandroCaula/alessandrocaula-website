@@ -7,7 +7,7 @@ const ThemeSwitcher = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className={`theme-switch ${isDark ? "bg-background shadow-[0px_2px_8px_#881FFF]" : "bg-slate-300 shadow-[0px_2px_8px_#FFE9A6]"}`}
+      className={`theme-switch ${isDark ? "bg-background shadow-[0px_2px_8px_#881FFF]" : "bg-slate-100 shadow-[0px_2px_8px_#FFE9A6]"}`}
     >
       <div
         className={`absolute top-0 left-1 w-6 h-6 rounded-full flex-center transition-transform duration-300 ${

@@ -2,7 +2,8 @@ import AboutCard from "../custom/AboutCard";
 
 const About = () => {
   return (
-    <div className="mt-24 grid grid-rows-4 text-foreground md:grid md:grid-cols-1 md:grid-rows-4">
+    // grid grid-rows-4 text-foreground md:grid md:grid-cols-1 md:grid-rows-4
+    <div className="flex-center"> 
       <AboutCard
         imgPath="/koala.svg"
         title="About Me"
@@ -39,8 +40,8 @@ const About = () => {
             who use them.
           </p>
         }
-      /> */}
-
+      />
+      
       <AboutCard
         icon="💡"
         title="Personal Interests"
@@ -97,7 +98,7 @@ const About = () => {
             that make research faster and more reliable.
           </p>
         }
-      />
+      /> */}
     </div>
   );
 };
