@@ -10,7 +10,7 @@ import Experiences from "./components/pages/Experiences";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col max-w-6xl mx-auto">
+    <div className="min-h-screen flex flex-col max-w-5xl mx-auto">
       <Nav />
       {/* Vertical Scroll */}
       <main className="space-y-20">

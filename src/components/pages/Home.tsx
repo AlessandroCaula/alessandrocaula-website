@@ -20,18 +20,11 @@ const Home = () => {
         alt="Alessandro Caula Picture"
       />
 
-      {/* <h1 className="sm:mt-18 mt-12">
-        Hi! I'm <span className="font-inter">Alessandro Caula</span>
-      </h1>
-      <h2 className="font-inter sm:mt-8 mt-6 font-light">
-        Software Developer and Bioinformatician
-      </h2> */}
-
       {/* Animate text */}
       <TypeAnimation
         sequence={["Hi! I'm Alessandro Caula", () => setShowSecondLine(true)]}
         wrapper="h1"
-        speed={30}
+        speed={40}
         cursor={false}
         repeat={0} // Avoid looping
         className="sm:mt-18 mt-12"
@@ -51,7 +44,7 @@ const Home = () => {
         )}
       </div>
 
-      <div className="mt-14 sm:mt-20 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-4 max-sm:px-4">
+      <div className="mt-14 sm:mt-20 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-4 max-sm:px-8">
         <SocialButton
           icon={<BsLinkedin className={!isDark ? "text-[#0967C2]" : ""} />}
           label="LinkedIn"
