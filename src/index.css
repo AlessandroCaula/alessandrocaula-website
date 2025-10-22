@@ -117,7 +117,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
     }
 
     & p {
-      @apply leading-relaxed flex flex-grow items-center text-justify md:text-center;
+      @apply leading-relaxed flex flex-grow items-center text-justify md:text-center text-foreground text-lg md:text-xl;
     }
   }
 }
