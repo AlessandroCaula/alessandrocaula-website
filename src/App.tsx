@@ -12,18 +12,6 @@ const App = () => {
   return (
     <div className="min-h-screen flex flex-col max-w-6xl mx-auto">
       <Nav />
-
-      {/* With routing */}
-      {/* <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Portfolio />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/studies" element={<Studies />} />
-          <Route path="/experiences" element={<Experiences />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </main> */}
-
       {/* Vertical Scroll */}
       <main className="space-y-20">
         <section id="home">

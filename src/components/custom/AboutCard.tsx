@@ -14,7 +14,6 @@ const AboutCard = ({ icon, imgPath, title, text, link = "" }: props) => {
   const [customCursor, setCustomCursor] = useState(false);
 
   return (
-    // <div className="about-card custom-cursor">
     <div className={`about-card ${customCursor ? "custom-cursor" : ""}`}>
       <div className="grid grid-cols-3 grid-rows-1 items-center">
         <div className="flex justify-start items-center">

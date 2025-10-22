@@ -53,12 +53,6 @@ const Nav = () => {
       {/* Desktop menu */}
       <div className="links hidden sm:flex">
         {navLinks.map((link) => (
-          // With routing
-          //
-          // <Link key={link.to} to={link.to}>
-          //   {link.label}
-          // </Link>
-
           // With Vertical Scrolling
           <a key={link.to} href={link.to}>
             {link.label}
@@ -86,21 +80,6 @@ const Nav = () => {
           <SheetClose className="absolute bottom-8 right-8 text-background cursor-pointer">
             <BiLeftArrowCircle className="h-8 w-9" />
           </SheetClose>
-
-          {/* With Routing */}
-          {/*  */}
-          {/* <div className="flex flex-col space-y-6 margin-top">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="text-background text-lg font-lato ml-8"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))} */}
-
           {/* Vertical Scrolling */}
           <div className="flex flex-col space-y-6 margin-top">
             {navLinks.map((link) => (
