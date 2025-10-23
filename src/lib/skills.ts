@@ -6,7 +6,7 @@ import html from "../assets/skills-icons/html.svg";
 import css from "../assets/skills-icons/css.svg";
 import typescript from "../assets/skills-icons/typescript.svg";
 import react from "../assets/skills-icons/react.svg";
-import dotnetcore from "../assets/skills-icons/dotnetcore.svg";
+import dotnet from "../assets/skills-icons/dotnet.svg";
 import pandas from "../assets/skills-icons/pandas.svg";
 import numpy from "../assets/skills-icons/numpy.svg";
 import matplotlib from "../assets/skills-icons/matplotlib.svg";
@@ -28,9 +28,11 @@ import apple from "../assets/skills-icons/apple.svg";
 import bash from "../assets/skills-icons/bash.svg";
 import biopython from "../assets/skills-icons/Biopython.svg";
 import tailwind from "../assets/skills-icons/tailwindcss.svg";
-import nextflow from "../assets/skills-icons/file-type-nextflow.svg";
+// import nextflow from "../assets/skills-icons/file-type-nextflow.svg";
 import netlify from "../assets/skills-icons/netlify.svg";
 import postman from "../assets/skills-icons/postman.svg";
+import express from "../assets/skills-icons/express.svg";
+import reactrouter from "../assets/skills-icons/reactrouter.svg";
 
 // Categories
 export const programmingLanguages = [
@@ -45,12 +47,14 @@ export const programmingLanguages = [
 ];
 
 export const frameworks = [
-  dotnetcore,
+  dotnet,
   react,
+  reactrouter,
   tailwind,
-  biopython,
   nodejs,
-  nextflow,
+  express,
+  mongodb,
+  postman,
 ];
 
 export const machineLearningAndDataScience = [
@@ -66,7 +70,8 @@ export const dataScienceAndVisualization = [
   numpy,
   pandas,
   scikitlearn,
-  keras,
+  // keras,
+  biopython,
   matplotlib,
   seaborn,
   plotly,
@@ -80,8 +85,6 @@ export const OsAndTools = [
   git,
   vscode,
   visualstudio,
-  mongodb,
-  postman,
   amazonwebservices,
   netlify,
 ];

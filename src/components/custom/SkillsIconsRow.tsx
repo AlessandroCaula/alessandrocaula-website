@@ -6,7 +6,7 @@ interface props {
   icons: string[];
 }
 
-const spring: Transition = {
+const springSkillsRow: Transition = {
   type: "spring",
   damping: 20,
   stiffness: 300,
@@ -15,14 +15,13 @@ const spring: Transition = {
 const SkillsIconsRow = ({ title, icons }: props) => {
   return (
     <div className="space-y-4 flex-center flex-col">
-      <h3 className="text-center text-xl font-bold font-lato mb-4 underline underline-offset-2">{title}</h3>
-      <ul className="flex flex-row space-x-4">
+      <h3 className="text-center text-xl font-bold font-lato mb-5 underline underline-offset-2">{title}</h3>
+      <ul className="flex flex-row md:space-x-8 space-x-4">
         {icons.map((el) => (
-          // <li>{el}</li>
           <motion.img
             key={el}
             src={el}
-            transition={spring}
+            transition={springSkillsRow}
             layout
             className="w-15"
           />
