@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import * as motion from "motion/react-client";
 import type { Transition } from "motion/react";
-import { frameworks, programmingLanguages } from "@/lib/skills";
+import { dataScienceAndVisualization, frameworks, OsAndTools, programmingLanguages } from "@/lib/skills";
+import SkillsIconsRow from "../custom/SkillsIconsRow";
 
 // const skills = ["1", "2", "3", "4", "5", "6", "7", "8"];
 
@@ -21,59 +22,34 @@ const spring: Transition = {
 };
 
 export const Skills = () => {
-  const [orderProgrammingLanguages, setOrderProgrammingLanguages] =
-    useState(programmingLanguages);
+  const [orderProgrammingLanguages, setOrderProgrammingLanguages] = useState(programmingLanguages);
   const [orderFrameworks, setOrderFrameworks] = useState(frameworks);
+  // const [orderMlAndDataScience, setOrderMlAndDataScience] = useState(machineLearningAndDataScience);
+  const [orderDsAndVisualization, setOrderDsAndVisualization] = useState(dataScienceAndVisualization);
+  const [orderOsAndTools, setOrderOsAndTools] = useState(OsAndTools);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setOrderProgrammingLanguages(shuffle(orderProgrammingLanguages));
-      setOrderFrameworks(shuffle(orderFrameworks));
-    }, 2000);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setOrderProgrammingLanguages(shuffle(orderProgrammingLanguages));
+  //     setOrderFrameworks(shuffle(orderFrameworks));
+  //   }, 3000);
 
-    return () => clearInterval(timeout);
-  }, [orderProgrammingLanguages]);
+  //   return () => clearInterval(timeout);
+  // }, [orderProgrammingLanguages]);
 
   return (
     <div className="about-card">
       <h2>Skills</h2>
-      <div>
-        <h3>Programming Languages</h3>
-        <ul className="flex flex-row space-x-5">
-          {orderProgrammingLanguages.map((el) => (
-            // <li>{el}</li>
-            <motion.img
-              key={el}
-              src={el}
-              transition={spring}
-              layout
-              style={{
-                width: 60,
-                height: 60,
-                borderRadius: 12,
-                cursor: "pointer",
-              }}
-            />
-          ))}
-        </ul>
-        <h3>Programming Languages</h3>
-        <ul className="flex flex-row space-x-5">
-          {orderFrameworks.map((el) => (
-            // <li>{el}</li>
-            <motion.img
-              key={el}
-              src={el}
-              transition={spring}
-              layout
-              style={{
-                width: 60,
-                height: 60,
-                borderRadius: 12,
-                cursor: "pointer",
-              }}
-            />
-          ))}
-        </ul>
+      <div className="space-y-9">
+
+        <SkillsIconsRow title="Programming Languages" icons={orderProgrammingLanguages}/>
+                
+        <SkillsIconsRow title="Frameworks" icons={orderFrameworks}/>
+        
+        <SkillsIconsRow title="Data Science & Visualization" icons={orderDsAndVisualization}/>
+        
+        <SkillsIconsRow title="Other tech skills" icons={orderOsAndTools}/>
+
       </div>
     </div>
   );

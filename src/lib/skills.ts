@@ -27,8 +27,10 @@ import devexpress from "../assets/skills-icons/devexpress.svg";
 import apple from "../assets/skills-icons/apple.svg";
 import bash from "../assets/skills-icons/bash.svg";
 import biopython from "../assets/skills-icons/Biopython.svg";
-import tailwind from "../assets/skills-icons/tailwindcss.svg"
-import nextflow from "../assets/skills-icons/file-type-nextflow.svg"
+import tailwind from "../assets/skills-icons/tailwindcss.svg";
+import nextflow from "../assets/skills-icons/file-type-nextflow.svg";
+import netlify from "../assets/skills-icons/netlify.svg";
+import postman from "../assets/skills-icons/postman.svg";
 
 // Categories
 export const programmingLanguages = [
@@ -39,7 +41,7 @@ export const programmingLanguages = [
   html,
   css,
   bash,
-  rstudio
+  rstudio,
 ];
 
 export const frameworks = [
@@ -56,16 +58,22 @@ export const machineLearningAndDataScience = [
   pandas,
   scikitlearn,
   keras,
-]
+];
 
-export const visualization = [
+export const visualization = [matplotlib, seaborn, plotly, devexpress];
+
+export const dataScienceAndVisualization = [
+  numpy,
+  pandas,
+  scikitlearn,
+  keras,
   matplotlib,
   seaborn,
   plotly,
   devexpress,
-]
+];
 
-export const OSAndtools = [
+export const OsAndTools = [
   windows,
   linux,
   apple,
@@ -73,5 +81,7 @@ export const OSAndtools = [
   vscode,
   visualstudio,
   mongodb,
+  postman,
   amazonwebservices,
+  netlify,
 ];
