@@ -14,16 +14,18 @@ const springSkillsRow: Transition = {
 
 const SkillsIconsRow = ({ title, icons }: props) => {
   return (
-    <div className="space-y-4 flex-center flex-col">
-      <h3 className="text-center text-xl font-bold font-lato mb-5 underline underline-offset-2">{title}</h3>
-      <ul className="flex flex-row md:space-x-8 space-x-4">
+    <div className="flex-center flex-col">
+      <h3 className="text-center text-xl font-bold font-lato max-sm:mb-2 mb-5 underline underline-offset-2">
+        {title}
+      </h3>
+      <ul className="grid grid-cols-4 grid-rows-2 items-center justify-center sm:flex sm:flex-row max-sm:gap-x-9 md:space-x-8 sm:space-x-5">
         {icons.map((el) => (
           <motion.img
             key={el}
             src={el}
             transition={springSkillsRow}
             layout
-            className="w-15"
+            className="w-13 md:w-15 max-sm:py-2"
           />
         ))}
       </ul>

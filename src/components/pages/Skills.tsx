@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import type { Transition } from "motion/react";
 import {
   dataScienceAndVisualization,
   frameworks,
@@ -41,20 +40,21 @@ export const Skills = () => {
       setOrderDsAndVisualization(dataScienceAndVisualization);
       setOrderOsAndTools(OsAndTools);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderProgrammingLanguages, isAnimated]);
 
   return (
     <div className="about-card">
       <div className="grid grid-cols-3">
         <div></div>
-        <h2>Skills</h2>
+        <h2 className="max-sm:text-[25px]">Skills</h2>
         <CustomStandardSwitch
           checked={isAnimated}
           onCheckedChange={handleAnimationChange}
         />
       </div>
 
-      <div className="space-y-10">
+      <div className="space-y-6 sm:space-y-10">
         <SkillsIconsRow
           title="Programming Languages"
           icons={orderProgrammingLanguages}

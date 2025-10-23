@@ -37,7 +37,7 @@ const AboutCard = ({ icon, imgPath, title, text, link = "" }: props) => {
             <div className="icon-card cursor-pointer">{icon}</div>
           )}
         </div>
-        <h2 className="text-center">{title}</h2>
+        <h2 className="text-center max-sm:text-[25px]">{title}</h2>
       </div>
 
       {text}
