@@ -36,6 +36,12 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
   h2 {
     @apply text-foreground text-lg sm:text-2xl md:text-3xl;
   }
+  h3 {
+    @apply text-foreground;
+  }
+  p {
+    @apply text-foreground;
+  }
 }
 
 /* Custom utilities */
@@ -113,7 +119,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
     }
 
     & h2 {
-      @apply text-center font-lato font-bold mb-6 mt-6 md:text-2xl;
+      @apply text-center font-lato font-bold mb-6 mt-6 md:text-3xl;
     }
 
     & p {

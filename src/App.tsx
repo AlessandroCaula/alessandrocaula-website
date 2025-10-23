@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import Projects from "./components/pages/Projects";
 import Studies from "./components/pages/Studies";
 import Experiences from "./components/pages/Experiences";
+import { Skills } from "./components/pages/Skills";
 // import Portfolio from "./components/Portfolio";
 
 const App = () => {
@@ -20,9 +21,12 @@ const App = () => {
         <section id="about">
           <About />
         </section>
-        <section id="studies">
-          <Studies />
+        <section id="skills">
+          <Skills />
         </section>
+        {/* <section id="studies">
+          <Studies />
+        </section> */}
         <section id="experiences">
           <Experiences />
         </section>

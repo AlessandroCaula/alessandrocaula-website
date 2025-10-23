@@ -42,7 +42,8 @@ const Nav = () => {
   const navLinks = [
     { to: "#home", label: "Home" },
     { to: "#about", label: "About" },
-    { to: "#studies", label: "Studies" },
+    { to: "#skills", label: "Skills" },
+    // { to: "#studies", label: "Studies" },
     { to: "#experiences", label: "Experiences" },
     { to: "#projects", label: "Projects" },
   ];
