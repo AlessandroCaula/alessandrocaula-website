@@ -12,7 +12,7 @@ const Portfolio = () => {
       <section id="studies"><Studies /></section>
       <section id="experiences"><Experiences /></section>
       <section id="projects"><Projects /></section>
-=    </div>
+    </div>
   )
 }
 

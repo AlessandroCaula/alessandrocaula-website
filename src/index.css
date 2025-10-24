@@ -31,7 +31,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
 
 @layer base {
   h1 {
-    @apply text-foreground text-2xl sm:text-4xl md:text-5xl;
+    @apply text-foreground text-3xl sm:text-5xl md:text-5xl;
   }
   h2 {
     @apply text-foreground text-lg sm:text-2xl md:text-3xl;
@@ -88,7 +88,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
   }
 
   .nav-bar {
-    @apply bg-foreground fixed top-1 left-1 right-1 flex items-center justify-between pr-5 rounded-xl h-11 light-custom-shadow z-[100] transition-all duration-400 ease-in-out;
+    @apply bg-foreground fixed top-1 left-1 right-1 md:left-10 md:right-10 flex items-center justify-between pr-5 rounded-xl h-11 light-custom-shadow z-[100] transition-all duration-400 ease-in-out;
 
     /* When the nav bar needs to be hidden */
     &.hide {
@@ -115,30 +115,27 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
     }
   }
 
-  .about-card {
-    @apply m-8 rounded-lg ring-1 ring-slate-900/8 dark:ring-slate-100/15 p-6 shadow-xl shadow-slate-900/10 dark:shadow-slate-100/10 flex flex-col space-y-5 pb-10;
+  .card-style {
+    @apply m-8 rounded-lg ring-1 ring-slate-900/8 dark:ring-slate-100/15 p-6 shadow-xl shadow-slate-900/10 dark:shadow-slate-100/10 flex flex-col pb-10;
 
     & .icon-card {
       @apply flex-center w-12 h-12 items-center text-3xl rounded-full custom-buttons dark:dark-custom-shadow dark:hover:dark-custom-shadow-hover;
     }
 
-    & h2 {
-      @apply text-center font-lato mb-6 mt-6 md:text-3xl;
-    }
-
-    & p {
-      @apply flex flex-grow items-center text-center text-foreground md:text-[18px];
+    & .title {
+      @apply text-center font-inter text-4xl mb-10 mt-6;
     }
   }
 }
 
 html,
 body {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: var(--background);
   font-family: var(--font-roboto);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }

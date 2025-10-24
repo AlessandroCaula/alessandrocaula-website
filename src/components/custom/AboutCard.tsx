@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 // import { motion } from "motion/react";
 // import { cardVariants } from "@/animations/variants";
-import AnimatedCardWrapper from "./AnimatedCardWrapper";
+import AnimatedCardWrapper from "./VerticalAnimatedCardWrapper";
 
 interface props {
   icon?: string;
@@ -17,24 +17,24 @@ const AboutCard = ({ icon, imgPath, title, text, link = "" }: props) => {
   const [customCursor, setCustomCursor] = useState(false);
 
   return (
-    <AnimatedCardWrapper className={`about-card ${customCursor ? "custom-cursor" : ""}`}>
-      <div className="grid grid-cols-3 grid-rows-1 items-center">
+    <AnimatedCardWrapper className={`card-style ${customCursor ? "custom-cursor" : ""}`}>
+      <div className="grid grid-cols-[1fr_2fr_1fr] grid-rows-1 items-center">
         <div className="flex justify-start items-center">
           {imgPath && !customCursor ? (
             <img
               src={imgPath}
               onClick={() => setCustomCursor((prev) => !prev)}
-              className={`icon-card p-1 mb-1 ${
+              className={`icon-card p-1 mb-6 ${
                 customCursor ? "custom-cursor" : "cursor-pointer"
               }`}
             />
           ) : imgPath && customCursor ? (
-            <div className="icon-card p-1 mb-1" onClick={() => setCustomCursor((prev) => !prev)}></div>
+            <div className="icon-card p-1 mb-6" onClick={() => setCustomCursor((prev) => !prev)}></div>
           ) : (
             <div className="icon-card cursor-pointer">{icon}</div>
           )}
         </div>
-        <h2 className="text-center font-lato text-4xl">{title}</h2>
+        <h2 className="title">{title}</h2>
       </div>
 
       {text}

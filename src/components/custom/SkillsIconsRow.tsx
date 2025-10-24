@@ -8,7 +8,7 @@ interface props {
 
 const springSkillsRow: Transition = {
   type: "spring",
-  damping: 20,
+  damping: 25,
   stiffness: 300,
 };
 
@@ -25,7 +25,7 @@ const SkillsIconsRow = ({ title, icons }: props) => {
             src={el}
             transition={springSkillsRow}
             layout
-            className="w-13 md:w-15 max-sm:py-2"
+            className="w-13 md:w-14 max-sm:py-2"
           />
         ))}
       </ul>

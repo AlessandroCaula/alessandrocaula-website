@@ -8,8 +8,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { Menu } from "lucide-react";
-import { BiLeftArrowCircle } from "react-icons/bi";
+import { ArrowUpCircle, Menu } from "lucide-react";
+// import { BiLeftArrowCircle } from "react-icons/bi";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 
 const Nav = () => {
@@ -24,6 +24,7 @@ const Nav = () => {
     } else if (scrollDirection === "down" && scrollY > 50) {
       setIsNavVisible(false);
     }
+    console.log(scrollY)
   }, [scrollY, scrollDirection]);
 
   const navLinks = [
@@ -54,7 +55,7 @@ const Nav = () => {
             <Menu className="ml-5 h-6 w-6" />
           </button>
         </SheetTrigger>
-        <SheetContent side="left" className="bg-foreground border-foreground">
+        <SheetContent side="top" className="bg-foreground border-foreground z-110">
           {/* Hiding the "required" SheetTitle and SheetDescription */}
           <SheetTitle className="text-foreground m-0 p-0 text-[0px]">
             Menu
@@ -64,11 +65,11 @@ const Nav = () => {
           </SheetDescription>
 
           {/* Close button */}
-          <SheetClose className="absolute bottom-8 right-8 text-background cursor-pointer">
-            <BiLeftArrowCircle className="h-8 w-9" />
+          <SheetClose className="absolute bottom-8 right-8 text-background cursor-pointer rounded-2xl">
+            <ArrowUpCircle className="h-8 w-9" />
           </SheetClose>
           {/* Vertical Scrolling */}
-          <div className="flex flex-col space-y-6 margin-top">
+          <div className="flex flex-col space-y-6 mt-5 mb-8">
             {navLinks.map((link) => (
               <a
                 key={link.to}

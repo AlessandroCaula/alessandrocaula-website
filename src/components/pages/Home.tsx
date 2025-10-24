@@ -81,7 +81,7 @@ const Home = () => {
         )}
       </div>
 
-      <div className="mt-20 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-4 max-sm:px-8">
+      <div className="mt-25 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-8 max-sm:px-8">
         <SocialButton
           icon={<BsLinkedin className={!isDark ? "text-[#0967C2]" : ""} />}
           label="LinkedIn"

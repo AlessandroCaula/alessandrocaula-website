@@ -7,7 +7,7 @@ import {
 } from "@/lib/skills";
 import SkillsIconsRow from "../custom/SkillsIconsRow";
 import CustomStandardSwitch from "../custom/CustomStandardSwitch";
-import AnimatedCardWrapper from "../custom/AnimatedCardWrapper";
+import AnimatedCardWrapper from "../custom/VerticalAnimatedCardWrapper";
 
 const shuffle = ([...arr]: string[]): string[] => {
   return arr.sort(() => Math.random() - 0.5);
@@ -35,7 +35,7 @@ export const Skills = () => {
         setOrderFrameworks(shuffle(orderFrameworks));
         setOrderDsAndVisualization(shuffle(orderDsAndVisualization));
         setOrderOsAndTools(shuffle(orderOsAndTools));
-      }, 2500);
+      }, 2000);
 
       return () => clearTimeout(timeout);
     } else {
@@ -49,13 +49,14 @@ export const Skills = () => {
 
   return (
     <div className="pt-10">
-      <AnimatedCardWrapper className="about-card">
+      <AnimatedCardWrapper className="card-style">
         <div className="grid grid-cols-3">
           <div></div>
-          <h2 className="font-inter text-4xl">Skills</h2>
+          <h2 className="title">Skills</h2>
           <CustomStandardSwitch
             checked={isAnimated}
             onCheckedChange={handleAnimationChange}
+            className="flex justify-end items-center pr-5 max-sm:mb-3 max-sm:mr-2"
           />
         </div>
 

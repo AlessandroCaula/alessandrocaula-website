@@ -3,11 +3,12 @@ import { Switch } from "../ui/switch";
 interface props {
   checked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
+  className?: string
 }
 
-const CustomStandardSwitch = ({ checked, onCheckedChange }: props) => {
+const CustomStandardSwitch = ({ checked, onCheckedChange, className = "" }: props) => {
   return (
-    <div className="flex justify-end items-center pr-5">
+    <div className={className}>
       <Switch
         className="
           h-5 w-9 shadow-sm shadow-slate-400 ring-1 ring-slate-500/10

@@ -12,11 +12,11 @@ import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col max-w-5xl mx-auto">
+    <div className="min-h-screen flex flex-col max-w-4xl mx-auto">
       <Toaster position="top-center" />
       <Nav />
       {/* Vertical Scroll */}
-      <main className="space-y-5">
+      <main>
         <section id="home">
           <Home />
         </section>
