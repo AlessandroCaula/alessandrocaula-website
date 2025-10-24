@@ -7,15 +7,19 @@ import {
 } from "@/lib/skills";
 import SkillsIconsRow from "../custom/SkillsIconsRow";
 import CustomStandardSwitch from "../custom/CustomStandardSwitch";
+import AnimatedCardWrapper from "../custom/AnimatedCardWrapper";
 
 const shuffle = ([...arr]: string[]): string[] => {
   return arr.sort(() => Math.random() - 0.5);
 };
 
 export const Skills = () => {
-  const [orderProgrammingLanguages, setOrderProgrammingLanguages] = useState(programmingLanguages);
+  const [orderProgrammingLanguages, setOrderProgrammingLanguages] =
+    useState(programmingLanguages);
   const [orderFrameworks, setOrderFrameworks] = useState(frameworks);
-  const [orderDsAndVisualization, setOrderDsAndVisualization] = useState(dataScienceAndVisualization);
+  const [orderDsAndVisualization, setOrderDsAndVisualization] = useState(
+    dataScienceAndVisualization
+  );
   const [orderOsAndTools, setOrderOsAndTools] = useState(OsAndTools);
 
   const [isAnimated, setIsAnimated] = useState(true);
@@ -40,38 +44,40 @@ export const Skills = () => {
       setOrderDsAndVisualization(dataScienceAndVisualization);
       setOrderOsAndTools(OsAndTools);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderProgrammingLanguages, isAnimated]);
 
   return (
-    <div className="about-card">
-      <div className="grid grid-cols-3">
-        <div></div>
-        <h2 className="max-sm:text-[25px]">Skills</h2>
-        <CustomStandardSwitch
-          checked={isAnimated}
-          onCheckedChange={handleAnimationChange}
-        />
-      </div>
+    <div className="pt-10">
+      <AnimatedCardWrapper className="about-card">
+        <div className="grid grid-cols-3">
+          <div></div>
+          <h2 className="font-inter text-4xl">Skills</h2>
+          <CustomStandardSwitch
+            checked={isAnimated}
+            onCheckedChange={handleAnimationChange}
+          />
+        </div>
 
-      <div className="space-y-6 sm:space-y-10">
-        <SkillsIconsRow
-          title="Programming Languages"
-          icons={orderProgrammingLanguages}
-        />
+        <div className="space-y-6 sm:space-y-10">
+          <SkillsIconsRow
+            title="Programming Languages"
+            icons={orderProgrammingLanguages}
+          />
 
-        <SkillsIconsRow
-          title="Frameworks & Fullstack"
-          icons={orderFrameworks}
-        />
+          <SkillsIconsRow
+            title="Frameworks & Fullstack"
+            icons={orderFrameworks}
+          />
 
-        <SkillsIconsRow
-          title="Data Science & Visualization"
-          icons={orderDsAndVisualization}
-        />
+          <SkillsIconsRow
+            title="Data Science & Visualization"
+            icons={orderDsAndVisualization}
+          />
 
-        <SkillsIconsRow title="Other tech skills" icons={orderOsAndTools} />
-      </div>
+          <SkillsIconsRow title="Other tech skills" icons={orderOsAndTools} />
+        </div>
+      </AnimatedCardWrapper>
     </div>
   );
 };

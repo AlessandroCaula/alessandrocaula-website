@@ -4,17 +4,19 @@ import Nav from "./components/Nav";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Projects from "./components/pages/Projects";
-import Studies from "./components/pages/Studies";
+// import Studies from "./components/pages/Studies";
 import Experiences from "./components/pages/Experiences";
 import { Skills } from "./components/pages/Skills";
+import { Toaster } from "react-hot-toast";
 // import Portfolio from "./components/Portfolio";
 
 const App = () => {
   return (
     <div className="min-h-screen flex flex-col max-w-5xl mx-auto">
+      <Toaster position="top-center" />
       <Nav />
       {/* Vertical Scroll */}
-      <main className="space-y-20">
+      <main className="space-y-5">
         <section id="home">
           <Home />
         </section>

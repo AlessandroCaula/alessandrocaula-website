@@ -10,34 +10,21 @@ import {
 } from "./ui/sheet";
 import { Menu } from "lucide-react";
 import { BiLeftArrowCircle } from "react-icons/bi";
+import { useScrollDirection } from "@/hooks/useScrollDirection";
 
 const Nav = () => {
   // Use state that will check if the navBar needs to be visible or not
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { scrollDirection, scrollY } = useScrollDirection();
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY === 0) {
-        setIsNavVisible(true);
-      } else if (currentScrollY > 50 && currentScrollY > lastScrollY) {
-        setIsNavVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        setIsNavVisible(true);
-      }
-
-      lastScrollY = currentScrollY;
-    };
-
-    // Adding the even to the scroll action
-    window.addEventListener("scroll", handleScroll);
-    // Run when unmount, unsubscribe from the scroll action
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (scrollY === 0 || scrollDirection === "up") {
+      setIsNavVisible(true);
+    } else if (scrollDirection === "down" && scrollY > 50) {
+      setIsNavVisible(false);
+    }
+  }, [scrollY, scrollDirection]);
 
   const navLinks = [
     { to: "#home", label: "Home" },

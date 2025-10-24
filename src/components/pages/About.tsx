@@ -2,7 +2,7 @@ import AboutCard from "../custom/AboutCard";
 
 const About = () => {
   return (
-    <div className="flex-center"> 
+    <div className="flex-center pt-20"> 
       <AboutCard
         imgPath="/koala.svg"
         title="About Me"

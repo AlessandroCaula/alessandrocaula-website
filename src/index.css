@@ -66,7 +66,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
 }
 
 @utility margin-top {
-  @apply mt-28;
+  @apply pt-28;
 }
 
 @utility custom-cursor {
@@ -75,6 +75,10 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
 
 @utility custom-buttons {
   @apply ring-1 ring-slate-900/40 hover:sm:scale-105 hover:scale-102 light-custom-shadow hover:light-custom-shadow-hover transition-all;
+}
+
+@utility page-layout {
+  @apply pt-10
 }
 
 /* Components */
@@ -119,7 +123,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
     }
 
     & h2 {
-      @apply text-center font-lato font-bold mb-6 mt-6 md:text-3xl;
+      @apply text-center font-lato mb-6 mt-6 md:text-3xl;
     }
 
     & p {
