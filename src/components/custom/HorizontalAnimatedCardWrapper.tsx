@@ -26,7 +26,7 @@ const cardVariants: Variants = {
     opacity: 1,
     transition: {
       type: "tween",
-      duration: 0.6,
+      duration: 0.75,
       bounce: 0.3,
       ease: "easeOut",
     },

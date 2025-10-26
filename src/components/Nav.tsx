@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import ThemeSwitcher from "./custom/ThemeSwitcher";
 import {
   Sheet,
-  SheetClose,
+  // SheetClose,
   SheetContent,
   SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { ArrowUpCircle, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 // import { BiLeftArrowCircle } from "react-icons/bi";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 
@@ -24,7 +24,6 @@ const Nav = () => {
     } else if (scrollDirection === "down" && scrollY > 50) {
       setIsNavVisible(false);
     }
-    console.log(scrollY)
   }, [scrollY, scrollDirection]);
 
   const navLinks = [
@@ -55,7 +54,7 @@ const Nav = () => {
             <Menu className="ml-5 h-6 w-6" />
           </button>
         </SheetTrigger>
-        <SheetContent side="top" className="bg-foreground border-foreground z-110">
+        <SheetContent side="top" className="bg-foreground border-foreground z-300">
           {/* Hiding the "required" SheetTitle and SheetDescription */}
           <SheetTitle className="text-foreground m-0 p-0 text-[0px]">
             Menu
@@ -65,9 +64,9 @@ const Nav = () => {
           </SheetDescription>
 
           {/* Close button */}
-          <SheetClose className="absolute bottom-8 right-8 text-background cursor-pointer rounded-2xl">
+          {/* <SheetClose className="absolute bottom-8 right-8 text-background cursor-pointer rounded-2xl">
             <ArrowUpCircle className="h-8 w-9" />
-          </SheetClose>
+          </SheetClose> */}
           {/* Vertical Scrolling */}
           <div className="flex flex-col space-y-6 mt-5 mb-8">
             {navLinks.map((link) => (

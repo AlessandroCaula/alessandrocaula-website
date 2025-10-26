@@ -57,7 +57,7 @@ const ExperienceCard = ({
             target="_blank"
             className="text-xl text-foreground absolute bottom-8 right-8 cursor-pointer hover:text-orange-400"
           >
-            <BiLinkExternal />
+            <BiLinkExternal className="opacity-80" />
           </a>
         )}
       </div>

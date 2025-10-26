@@ -22,7 +22,7 @@ const Experiences = () => {
         }
         skills={["C#", ".NET", "OOP", "DevExpress", "WinForm", "R&D"]}
         link="https://www.3brain.com/products/software/brainwave-6"
-        xInitialOffset={300}
+        xInitialOffset={-300}
       />
 
       <ExperienceCard
@@ -35,9 +35,9 @@ const Experiences = () => {
             <br />Performed data preprocessing, feature selection, and model evaluation, and visualized results to extract meaningful biological insights.
           </p>
         }
-        skills={["Python", "NumPy", "Pandas", "Scikit-learn", "Jupyter Notebook"]}
+        skills={["Python", "NumPy", "Pandas", "Jupyter Notebook", "Scikit-learn"]}
         link="https://github.com/AlessandroCaula/MasterThesis_Projects"
-        xInitialOffset={-300}
+        xInitialOffset={300}
       />
 
     </div>

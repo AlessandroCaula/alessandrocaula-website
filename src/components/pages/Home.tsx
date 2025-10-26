@@ -20,8 +20,6 @@ const Home = () => {
 
   useEffect(() => {
     if (scrollDirection === "down" && scrollY > 100) setShowArrow(false);
-    console.log(showArrow);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollY, scrollDirection]);
 
   const copyToClipboard = (email: string) => {

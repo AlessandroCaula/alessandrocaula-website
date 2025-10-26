@@ -79,11 +79,11 @@ export const dataScienceAndVisualization = [
 ];
 
 export const OsAndTools = [
-  windows,
-  linux,
-  apple,
   git,
   vscode,
+  apple,
+  linux,
+  windows,
   visualstudio,
   amazonwebservices,
   netlify,
