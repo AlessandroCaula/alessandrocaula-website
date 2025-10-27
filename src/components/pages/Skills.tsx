@@ -41,7 +41,7 @@ export const Skills = () => {
     } else {
       setIsAnimated(false);
     }
-  });
+  }, []);
 
   useEffect(() => {
     if (isAnimated) {
