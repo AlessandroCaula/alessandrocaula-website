@@ -5,7 +5,7 @@ const Contacts = () => {
     <div className="pt-15 ml-8 flex flex-col gap-12">
       <h2 className="font-lato font-bold text-4xl">Wanna get in touch?</h2>
       <div className="flex flex-row items-center gap-x-5">
-        <MailIcon />
+        <MailIcon className="text-foreground"/>
         <a
           href="mailto:alecaula@gmail.com"
           className="relative group text-foreground underline text-2xl hover:text-orange-400 w-fit font-roboto"
