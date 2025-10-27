@@ -36,10 +36,10 @@ export const Skills = () => {
   // Check if the animation was turned off
   useEffect(() => {
     const lastAnimationStatus = localStorage.getItem("skillsAnimated");
-    if (lastAnimationStatus === "true") {
-      setIsAnimated(true);
-    } else {
+    if (lastAnimationStatus === "false") {
       setIsAnimated(false);
+    } else {
+      setIsAnimated(true);
     }
   }, []);
 
