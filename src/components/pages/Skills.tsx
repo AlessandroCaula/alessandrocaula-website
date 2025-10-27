@@ -26,7 +26,22 @@ export const Skills = () => {
 
   const handleAnimationChange = (isToAnimate: boolean) => {
     setIsAnimated(isToAnimate);
+    if (isToAnimate) {
+      localStorage.setItem("skillsAnimated", "true");
+    } else {
+      localStorage.setItem("skillsAnimated", "false");
+    }
   };
+
+  // Check if the animation was turned off
+  useEffect(() => {
+    const lastAnimationStatus = localStorage.getItem("skillsAnimated");
+    if (lastAnimationStatus === "true") {
+      setIsAnimated(true);
+    } else {
+      setIsAnimated(false);
+    }
+  });
 
   useEffect(() => {
     if (isAnimated) {
@@ -56,7 +71,7 @@ export const Skills = () => {
           <CustomStandardSwitch
             checked={isAnimated}
             onCheckedChange={handleAnimationChange}
-            className="flex justify-end items-center pr-5 mb-4 max-sm:mr-2 mr-6"
+            className="flex justify-end items-center pr-5 mb-4 max-sm:mr-0 mr-6"
           />
         </div>
 
