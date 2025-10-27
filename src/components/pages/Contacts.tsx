@@ -15,7 +15,7 @@ const Contacts = () => {
         <div className="flex flex-row items-center gap-x-5">
           <MailIcon className="text-orange-400" />
           <a
-            href="mailto:alecaula@gmail.com"
+            href="mailto:alecaula96@gmail.com"
             className="relative group text-foreground underline text-2xl hover:text-orange-400 w-fit font-roboto"
           >
             alecaula96@gmail.com

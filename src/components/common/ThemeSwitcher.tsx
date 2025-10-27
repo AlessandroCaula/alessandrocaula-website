@@ -15,9 +15,9 @@ const ThemeSwitcher = () => {
         }`}
       >
         {isDark ? (
-          <img className="w-7" src={SleepyKoala} />
+          <img className="w-7 max-sm:w-8 max-sm:pt-1" src={SleepyKoala} />
         ) : (
-          <img className="w-7" src={AwakeKoala} />
+          <img className="w-7 max-sm:w-8 max-sm:pt-1" src={AwakeKoala} />
         )}
       </div>
     </button>
