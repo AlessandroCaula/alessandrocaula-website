@@ -1,4 +1,4 @@
-import AboutCard from "../custom/AboutCard";
+import AboutCard from "../common/AboutCard";
 
 const About = () => {
   return (

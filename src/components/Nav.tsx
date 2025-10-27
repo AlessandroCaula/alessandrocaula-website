@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ThemeSwitcher from "./custom/ThemeSwitcher";
+import ThemeSwitcher from "./common/ThemeSwitcher";
 import {
   Sheet,
   SheetClose,

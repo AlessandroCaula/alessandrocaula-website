@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import SkillsIconsRow from "../custom/SkillsIconsRow";
-import CustomStandardSwitch from "../custom/CustomStandardSwitch";
-import AnimatedCardWrapper from "../custom/VerticalAnimatedCardWrapper";
+import SkillsIconsRow from "../common/SkillsIconsRow";
+import CustomStandardSwitch from "../common/CustomStandardSwitch";
+import AnimatedCardWrapper from "../common/VerticalAnimatedCardWrapper";
 import {
   programmingLanguages,
   dataScienceAndVisualization,

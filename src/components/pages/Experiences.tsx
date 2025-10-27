@@ -1,4 +1,4 @@
-import ExperienceCard from "../custom/ExperienceCard";
+import ExperienceCard from "../common/ExperienceCard";
 
 const Experiences = () => {
   return (

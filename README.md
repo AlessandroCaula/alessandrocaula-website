@@ -1,3 +1,12 @@
-# Personal Website 
+# Personal Portfolio Website
 
-![Under Construction Penguin GIF by Pudgy Penguins](https://media3.giphy.com/media/vR1dPIYzQmkRzLZk2w/giphy.gif)
+This is my personal portfolio website, built with React and Vite, to showcase my software development projects, experience, and skills.
+
+## Tech Stack
+
+- **React** and **TypeScript**
+- **Tailwind CSS** for styling
+- **Shadcn/UI** for pre-build UI components 
+- **Framer Motion** for animations and transitions
+
+### 🌐 [WebSite ↗](https://alessandrocaula.netlify.app/)

@@ -66,7 +66,7 @@ export const projects: projectType[] = [
     title: "Sorting Algorithm Visualizer",
     description:
       "Created a visual tool to compare sorting algorithms through live animations, breaking them down into visual step.",
-    technologies: ["C#", "WinForms", "DevExpress"],
+    technologies: ["C#", "WinForms"],
     image: "AlgorithmVisualizer",
     github:
       "https://github.com/AlessandroCaula/SortingAlgorithmVisualizer/tree/master",

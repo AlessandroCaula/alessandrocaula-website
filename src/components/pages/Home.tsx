@@ -1,7 +1,7 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import LightModeProfilePic from "../../assets/Web_Light_Mode.jpeg";
 import DarkModeProfilePic from "../../assets/Web_Dark_Mode.jpeg";
-import SocialButton from "../custom/SocialButton";
+import SocialButton from "../common/SocialButton";
 import { SiGmail } from "react-icons/si";
 import { GrDocumentPdf } from "react-icons/gr";
 import { useTheme } from "@/context/ThemeContext";

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import ClosedProjectCard from "../custom/ClosedProjectCard";
-import OpenProjectCard from "../custom/OpenProjectCard";
-import { projects } from "@/lib/personalProjects";
-
+import ClosedProjectCard from "../common/ClosedProjectCard";
+import OpenProjectCard from "../common/OpenProjectCard";
+import { projects } from "../../data/personalProjects";
 
 const Projects = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
