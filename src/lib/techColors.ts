@@ -15,5 +15,5 @@ export const techColorCodes: Record<string, string> = {
   Biopython: "#90FFC1",
   WinForms: "#6DB2FE",
   DevExpress: "#FFA71A",
-  TailwindCSS: "#35B3EF"
+  TailwindCSS: "#35B3EF",
 };

@@ -111,7 +111,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
     }
 
     & .theme-switch {
-      @apply ring-1 relative w-14 h-6 rounded-full transition-colors duration-300 cursor-pointer light-custom-shadow;
+      @apply ring-1 relative w-14 h-7 sm:h-6 rounded-full transition-colors duration-300 cursor-pointer light-custom-shadow;
     }
   }
 
