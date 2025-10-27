@@ -3,7 +3,7 @@ import { MailIcon } from "lucide-react";
 const Contacts = () => {
   return (
     <div className="pt-15 ml-8 flex flex-col gap-12">
-      <h2 className="font-lato font-bold text-4xl">Wanna get in touch?</h2>
+      <h2 className="font-lato font-bold text-5xl">Wanna get in touch?</h2>
       <div className="flex flex-row items-center gap-x-5">
         <MailIcon className="text-foreground"/>
         <a
