@@ -20,7 +20,7 @@ const TechPill = ({ tech }: props) => {
   const pillColor = retrieveColorFromTech(tech)
 
   return (
-    <div className="px-2 py-1 rounded-full opacity-90" style={{ backgroundColor: pillColor }}>
+    <div className="px-3 py-1 rounded-full opacity-90" style={{ backgroundColor: pillColor }}>
       <p className="text-foreground">{tech}</p>
     </div>
   )

@@ -28,7 +28,7 @@ const ClosedProjectCard = ({
           <h3 className="font-semibold text-lg">{title}</h3>
           <p className="mt-4 font-light">{description}</p>
         </div>
-        <div className="flex flex-row mt-6 gap-x-1 gap-y-1 flex-wrap">
+        <div className="flex flex-row mt-6 gap-x-2 gap-y-2 flex-wrap">
           {technologies.map((tech) => (
             <TechPill key={tech} tech={tech} />
           ))}

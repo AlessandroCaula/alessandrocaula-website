@@ -10,5 +10,10 @@ export const techColorCodes: Record<string, string> = {
   CSS: "#663399",
   Python: "#3572A5",
   TypeScript: "#3178c6",
-  Csharp: "#178600"
+  Csharp: "#178600",
+  NumPy: "#9C8AF9",
+  Biopython: "#90FFC1",
+  WinForms: "#6DB2FE",
+  DevExpress: "#FFA71A",
+  TailwindCSS: "#35B3EF"
 };

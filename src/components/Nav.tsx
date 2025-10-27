@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import ThemeSwitcher from "./custom/ThemeSwitcher";
 import {
   Sheet,
+  SheetClose,
   // SheetClose,
   SheetContent,
   SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { Menu } from "lucide-react";
+import { ArrowUpCircle, Menu } from "lucide-react";
 // import { BiLeftArrowCircle } from "react-icons/bi";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 
@@ -33,6 +34,7 @@ const Nav = () => {
     // { to: "#studies", label: "Studies" },
     { to: "#experiences", label: "Experiences" },
     { to: "#projects", label: "Projects" },
+    { to: "#contact", label: "Contact" }
   ];
 
   return (
@@ -64,9 +66,9 @@ const Nav = () => {
           </SheetDescription>
 
           {/* Close button */}
-          {/* <SheetClose className="absolute bottom-8 right-8 text-background cursor-pointer rounded-2xl">
-            <ArrowUpCircle className="h-8 w-9" />
-          </SheetClose> */}
+          <SheetClose className="absolute bottom-8 right-8 text-background cursor-pointer rounded-2xl">
+            <ArrowUpCircle className="h-6 w-6" />
+          </SheetClose>
           {/* Vertical Scrolling */}
           <div className="flex flex-col space-y-6 mt-5 mb-8">
             {navLinks.map((link) => (

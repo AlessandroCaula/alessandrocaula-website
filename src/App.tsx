@@ -4,11 +4,10 @@ import Nav from "./components/Nav";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Projects from "./components/pages/Projects";
-// import Studies from "./components/pages/Studies";
 import Experiences from "./components/pages/Experiences";
 import { Skills } from "./components/pages/Skills";
 import { Toaster } from "react-hot-toast";
-// import Portfolio from "./components/Portfolio";
+import Contacts from "./components/pages/Contacts";
 
 const App = () => {
   return (
@@ -34,6 +33,9 @@ const App = () => {
         </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="contact">
+          <Contacts />
         </section>
       </main>
 

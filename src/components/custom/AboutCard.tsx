@@ -29,7 +29,9 @@ const AboutCard = ({ icon, imgPath, title, text, link = "" }: props) => {
               }`}
             />
           ) : imgPath && customCursor ? (
-            <div className="icon-card p-1 mb-6" onClick={() => setCustomCursor((prev) => !prev)}></div>
+            <div className={`icon-card p-1 mb-6 ${
+                customCursor ? "custom-cursor" : "cursor-pointer"
+              }`} onClick={() => setCustomCursor((prev) => !prev)}></div>
           ) : (
             <div className="icon-card cursor-pointer">{icon}</div>
           )}

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import {
-  dataScienceAndVisualization,
-  frameworks,
-  OsAndTools,
-  programmingLanguages,
-} from "@/lib/skills";
 import SkillsIconsRow from "../custom/SkillsIconsRow";
 import CustomStandardSwitch from "../custom/CustomStandardSwitch";
 import AnimatedCardWrapper from "../custom/VerticalAnimatedCardWrapper";
+import {
+  programmingLanguages,
+  dataScienceAndVisualization,
+  frameworks,
+  OsAndTools,
+} from "@/assets/skills-icons";
 
 const shuffle = ([...arr]: string[]): string[] => {
   return arr.sort(() => Math.random() - 0.5);
@@ -56,7 +56,7 @@ export const Skills = () => {
           <CustomStandardSwitch
             checked={isAnimated}
             onCheckedChange={handleAnimationChange}
-            className="flex justify-end items-center pr-5 max-sm:mb-3 max-sm:mr-2"
+            className="flex justify-end items-center pr-5 mb-4 max-sm:mr-2 mr-6"
           />
         </div>
 
