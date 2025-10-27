@@ -13,7 +13,7 @@ const HorizontalAnimatedCardWrapper = ({ children, xInitialOffset = 0 }: props) 
       initial={{ x: xInitialOffset, opacity: 0 }}
       whileInView="onscreen"
       variants={cardVariants}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0 }}
     >
       {children}
     </motion.div>
