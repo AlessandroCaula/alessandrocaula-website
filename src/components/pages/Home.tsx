@@ -107,7 +107,7 @@ const Home = () => {
           icon={<GrDocumentPdf />}
           label="CV"
           onClick={() =>
-            window.open("/public/Alessandro_Caula_CV.pdf", "_blank")
+            window.open("/Alessandro_Caula_CV.pdf", "_blank")
           }
         />
       </div>

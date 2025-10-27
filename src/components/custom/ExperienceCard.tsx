@@ -39,7 +39,7 @@ const ExperienceCard = ({
         </div>
         <div className="mt-4">
           <p className="text-lg font-bold">Relevant skills:</p>
-          <ul className="columns-3 rows-4 font-lato pt-3 space-y-1">
+          <ul className="columns-3 rows-4 max-sm:columns-2 font-lato pt-3 space-y-1">
             {skills.map((skill) => (
               <li
                 key={skill}
