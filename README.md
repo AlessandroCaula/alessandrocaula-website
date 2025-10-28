@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-This is my personal portfolio website, built with React and Vite, to showcase my software development projects, experience, and skills.
+This is my personal portfolio website, built with React and TypeScript, to showcase my software development projects, experience, and skills.
 
 ## Tech Stack
 
