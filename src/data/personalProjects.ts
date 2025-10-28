@@ -31,7 +31,7 @@ export const projects: projectType[] = [
     technologies: ["Python", "NumPy", "Biopython"],
     image: "ProteinLoopReconstruction",
     github:
-      "https://github.com/AlessandroCaula/web-projects/tree/main/free-scribe_react-js",
+      "https://github.com/AlessandroCaula/protein_loop_reconstruction_CCD_pipeline",
   },
   {
     id: 3,
