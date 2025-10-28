@@ -1,8 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { motion } from "motion/react";
-// import { cardVariants } from "@/animations/variants";
 import AnimatedCardWrapper from "./VerticalAnimatedCardWrapper";
 
 interface props {
@@ -14,12 +12,14 @@ interface props {
 }
 
 const AboutCard = ({ icon, imgPath, title, text, link = "" }: props) => {
+  // Hook for the custom cursor
   const [customCursor, setCustomCursor] = useState(false);
 
   return (
     <AnimatedCardWrapper className={`card-style ${customCursor ? "custom-cursor" : ""}`}>
       <div className="grid grid-cols-[1fr_2fr_1fr] grid-rows-1 items-center">
         <div className="flex justify-start items-center">
+          {/* Change the cursor appearance when the user click on the koala button. The cursor become the koala */}
           {imgPath && !customCursor ? (
             <img
               src={imgPath}

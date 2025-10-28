@@ -12,6 +12,8 @@ const springSkillsRow: Transition = {
   stiffness: 300,
 };
 
+// Row animation for the skills section.
+// 
 const SkillsIconsRow = ({ title, icons }: props) => {
   return (
     <div className="flex-center flex-col">

@@ -19,6 +19,7 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { scrollDirection, scrollY } = useScrollDirection();
 
+  // Based on the Y position, if the user is scrolling up or down, show or hide the nav bar.
   useEffect(() => {
     if (scrollY === 0 || scrollDirection === "up") {
       setIsNavVisible(true);

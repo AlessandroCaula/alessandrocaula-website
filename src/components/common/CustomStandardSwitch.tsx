@@ -6,6 +6,8 @@ interface props {
   className?: string
 }
 
+// Custom standard switch
+// 
 const CustomStandardSwitch = ({ checked, onCheckedChange, className = "" }: props) => {
   return (
     <div className={className}>

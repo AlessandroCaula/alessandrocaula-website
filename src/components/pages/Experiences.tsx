@@ -5,6 +5,7 @@ const Experiences = () => {
     <div className="pt-15">
       <h2 className="text-center font-lato text-4xl">Experience</h2>
       
+      {/* Render the experience card */}
       <ExperienceCard
         role="Bioinformatics Software Developer"
         period="May 2022 - Sep 2025"
@@ -25,6 +26,7 @@ const Experiences = () => {
         xInitialOffset={-300}
       />
 
+      {/* Render the experience card */}
       <ExperienceCard
         role="Data Scientist Intern"
         period="Apr 2021 - Feb 2022"

@@ -1,8 +1,4 @@
-// export const techColorCodes = [
-//   { tech: "JavaScript", color: "#f1e05a" },
-//   { tech: "React", color: "#00D8FF" },
-// ];
-
+// Tech to colors
 export const techColorCodes: Record<string, string> = {
   JavaScript: "#f1e05a",
   React: "#00D8FF",

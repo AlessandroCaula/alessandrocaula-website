@@ -12,6 +12,7 @@ interface props {
   xInitialOffset: number;
 }
 
+// Card used for the experiences section of the portfolio
 const ExperienceCard = ({
   role,
   period,
@@ -21,6 +22,7 @@ const ExperienceCard = ({
   link,
   xInitialOffset,
 }: props) => {
+  // The card is wrapped around the animation.div. This will allow the card to enter the screen from the sides
   return (
     <HorizontalAnimatedCardWrapper xInitialOffset={xInitialOffset}>
       <div className="card-style p-8 relative">

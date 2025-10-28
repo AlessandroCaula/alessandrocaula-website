@@ -1,8 +1,11 @@
 import AboutCard from "../common/AboutCard";
 
+// About Section
+// 
 const About = () => {
   return (
     <div className="flex-center pt-10"> 
+      {/* Render the AboutCard component */}
       <AboutCard
         imgPath="/koala.svg"
         title="About Me"

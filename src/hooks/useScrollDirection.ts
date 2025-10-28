@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 type ScrollDirection = "up" | "down" | "none";
 
+// Custom hook used to define whether the user is scrolling up or down. Used in the nav bar and in the down arrow for example.
 export const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] =
     useState<ScrollDirection>("none");
@@ -11,15 +12,18 @@ export const useScrollDirection = () => {
     let lastY = window.scrollY;
 
     const handleScroll = () => {
+      // Retrieve current Y and store it in the scrollY state.
       const currentY = window.scrollY;
       setScrollY(currentY);
 
+      // If the current Y is higher than the lastY (previous one) the used is scrolling down.
       if (currentY > lastY) {
         setScrollDirection("down");
       } else if (currentY < lastY) {
+        // If the current Y is smaller, the user is scrolling up.
         setScrollDirection("up");
       }
-
+      // Store the last scrolled Y
       lastY = currentY;
     };
 

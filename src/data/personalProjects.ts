@@ -10,6 +10,7 @@ interface projectType {
   demo?: string;
 }
 
+// Collection of the personal project that are rendered in the Projects section.
 export const projects: projectType[] = [
   {
     id: 1,

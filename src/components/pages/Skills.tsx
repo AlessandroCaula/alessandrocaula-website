@@ -21,19 +21,22 @@ export const Skills = () => {
     dataScienceAndVisualization
   );
   const [orderOsAndTools, setOrderOsAndTools] = useState(OsAndTools);
-
+  // Hook for checking if the skills needs to be animated and shuffle.
   const [isAnimated, setIsAnimated] = useState(true);
 
+  // Handle the animation switch change.
   const handleAnimationChange = (isToAnimate: boolean) => {
     setIsAnimated(isToAnimate);
     if (isToAnimate) {
+      // Store the toggle value in the local storage, for next page reload
       localStorage.setItem("skillsAnimated", "true");
     } else {
+      // Store the toggle value in the local storage, for next page reload
       localStorage.setItem("skillsAnimated", "false");
     }
   };
 
-  // Check if the animation was turned off
+  // Check if the animation was turned off from the user localStorage
   useEffect(() => {
     const lastAnimationStatus = localStorage.getItem("skillsAnimated");
     if (lastAnimationStatus === "false") {
@@ -43,17 +46,20 @@ export const Skills = () => {
     }
   }, []);
 
+  // Shuffle the order of the skill lists.
   useEffect(() => {
     if (isAnimated) {
+      // If is to animate, shuffle the lists.
       const timeout = setTimeout(() => {
         setOrderProgrammingLanguages(shuffle(orderProgrammingLanguages));
         setOrderFrameworks(shuffle(orderFrameworks));
         setOrderDsAndVisualization(shuffle(orderDsAndVisualization));
         setOrderOsAndTools(shuffle(orderOsAndTools));
-      }, 2000);
+      }, 1500);
 
       return () => clearTimeout(timeout);
     } else {
+      // Otherwise reset to the original order of the skills in the lists when the animation is turned off.
       setOrderProgrammingLanguages(programmingLanguages);
       setOrderFrameworks(frameworks);
       setOrderDsAndVisualization(dataScienceAndVisualization);
@@ -75,6 +81,7 @@ export const Skills = () => {
           />
         </div>
 
+        {/* Render the skills rows */}
         <div className="space-y-6 sm:space-y-10">
           <SkillsIconsRow
             title="Programming Languages"

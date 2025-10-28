@@ -7,6 +7,7 @@ import { projects } from "../../data/personalProjects";
 const Projects = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
+  // Function used to find the clicked project that has to be rendered as an open project card.
   const openedProject = () => {
     const project = projects.find((proj) => proj.id === selectedId);
 
@@ -14,6 +15,7 @@ const Projects = () => {
       return;
     } else {
       return (
+        // Render the open project card
         <OpenProjectCard
           key={project.id}
           id={project.id}
@@ -49,6 +51,7 @@ const Projects = () => {
       <AnimatePresence>
         {selectedId && (
           <div>
+
             {/* Dimmed background */}
             <motion.div
               className="fixed inset-0 bg-black bg-opacity-50 z-150"
@@ -60,6 +63,7 @@ const Projects = () => {
 
             {/* Expanded card */}
             {openedProject()}
+
           </div>
         )}
       </AnimatePresence>

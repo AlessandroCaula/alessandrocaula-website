@@ -18,10 +18,12 @@ const Home = () => {
   const [showArrow, setShowArrow] = useState(true);
   const { scrollDirection, scrollY } = useScrollDirection();
 
+  // Based on the Y scrolling position, show a down arrow to show the user to go down in the page.
   useEffect(() => {
     if (scrollDirection === "down" && scrollY > 100) setShowArrow(false);
   }, [scrollY, scrollDirection]);
 
+  // Toast to show the animation popup when the user clicks the email button contact.
   const copyToClipboard = (email: string) => {
     navigator.clipboard
       .writeText(email)
@@ -78,7 +80,8 @@ const Home = () => {
           />
         )}
       </div>
-
+      
+      {/* Render the buttons for the contacts and "socials" */}
       <div className="mt-25 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-8 max-sm:px-8">
         <SocialButton
           icon={<BsLinkedin className={!isDark ? "text-[#0967C2]" : ""} />}

@@ -6,10 +6,11 @@ interface props {
   xInitialOffset: number;
 }
 
+// Animation wrapper for the card. This card animates by entering the screen from the left or right sides, based on the xInitialOffset
+// 
 const HorizontalAnimatedCardWrapper = ({ children, xInitialOffset = 0 }: props) => {
   return (
     <motion.div
-      // className={className}
       initial={{ x: xInitialOffset, opacity: 0 }}
       whileInView="onscreen"
       variants={cardVariants}
@@ -26,7 +27,7 @@ const cardVariants: Variants = {
     opacity: 1,
     transition: {
       type: "tween",
-      duration: 0.75,
+      duration: 0.65,
       bounce: 0.3,
       ease: "easeOut",
     },

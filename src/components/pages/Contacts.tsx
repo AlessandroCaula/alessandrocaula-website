@@ -3,6 +3,8 @@ import MeAndPiseLight from "../../assets/MeAndPise-light.jpeg";
 import MeAndPiseDark from "../../assets/MeAndPise-dark.jpeg";
 import { useTheme } from "@/context/ThemeContext";
 
+// Final Contacts Section of the portfolio.
+// 
 const Contacts = () => {
   const { isDark } = useTheme();
 
@@ -27,7 +29,7 @@ const Contacts = () => {
       </div>
       <div>
         <img
-          src={isDark ? MeAndPiseDark : MeAndPiseLight}
+          src={isDark ? MeAndPiseDark : MeAndPiseLight}   // Change the image based on the theme (dark or light)
           className="sm:w-40 md:w-45 rounded-full max-sm:hidden shadow-xl"
         />
       </div>

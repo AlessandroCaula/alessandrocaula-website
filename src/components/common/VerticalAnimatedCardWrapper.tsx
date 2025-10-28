@@ -6,6 +6,8 @@ interface props {
   className?: string;
 }
 
+// Wrapper for the vertical animation transition. The children component wrapped into it, will arrive from the bottom.
+// 
 const VerticalAnimatedCardWrapper = ({ children, className }: props) => {
   return (
     <motion.div 

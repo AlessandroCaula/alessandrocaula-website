@@ -2,7 +2,9 @@ import { useTheme } from "@/context/ThemeContext";
 import AwakeKoala from "../../assets/Awake_Koala.png";
 import SleepyKoala from "../../assets/Sleepy_Koala.png";
 
+// Switch for changing dark and light mode in the portfolio.
 const ThemeSwitcher = () => {
+  // Hook for the used theme in the project.
   const { isDark, toggleDarkMode } = useTheme();
   return (
     <button
