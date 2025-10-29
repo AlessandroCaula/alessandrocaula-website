@@ -35,7 +35,7 @@ const ExperienceCard = ({
             {company}
           </p>
         </div>
-        <div className="border-[0.5px] border-orange-400 mt-5"></div>
+        <div className="border-[0.5px] border-secondary mt-5"></div>
         <div className="mt-5 leading-7 font-light text-justify font-inter">
           {description}
         </div>
@@ -57,7 +57,7 @@ const ExperienceCard = ({
           <a
             href={link}
             target="_blank"
-            className="text-xl text-foreground absolute bottom-8 right-8 cursor-pointer hover:text-orange-400"
+            className="text-xl text-foreground absolute bottom-8 right-8 cursor-pointer hover:text-secondary"
           >
             <BiLinkExternal className="opacity-80" />
           </a>

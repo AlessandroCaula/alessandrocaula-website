@@ -27,6 +27,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-secondary: #FE8902;
 }
 
 @layer base {
@@ -135,7 +136,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
     @apply custom-buttons w-26 h-10 rounded-lg mt-2 dark:ring-1 dark:ring-slate-100/20 dark:dark-custom-shadow dark:hover:dark-custom-shadow-hover;
 
     & a {
-      @apply font-bold flex-center justify-between w-full h-full px-3 text-foreground hover:text-orange-400;
+      @apply font-bold flex-center justify-between w-full h-full px-3 text-foreground hover:text-secondary;
     }
   }
 }

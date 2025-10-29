@@ -73,7 +73,7 @@ const Home = () => {
             speed={40}
             cursor={false}
             repeat={0} // Avoid looping
-            className="sm:mt-18 mt-12 z-20 text-orange-500 font-bold"
+            className="sm:mt-18 mt-12 z-20 text-secondary font-bold"
           />
           {showFirstLine && (
             <TypeAnimation

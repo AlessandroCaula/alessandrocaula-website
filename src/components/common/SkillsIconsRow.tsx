@@ -20,7 +20,7 @@ const SkillsIconsRow = ({ title, icons }: props) => {
       <h3 className="text-center text-xl font-bold font-lato mb-1">
         {title}
       </h3>
-      <div className="border-[0.5px] border-orange-400 w-7/8 mb-4"></div>
+      <div className="border-[0.5px] border-secondary w-7/8 mb-4"></div>
       <ul className="grid grid-cols-4 grid-rows-2 items-center justify-center sm:flex sm:flex-row max-sm:gap-x-9 md:space-x-8 sm:space-x-5">
         {icons.map((el) => (
           <motion.img
