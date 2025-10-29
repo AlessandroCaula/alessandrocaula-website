@@ -18,10 +18,10 @@ const Contacts = () => {
       </div>
 
       <div className="flex flex-col gap-13">
-        <h2 className="font-lato font-bold text-4xl sm:text-5xl">
+        <h2 className="font-lato font-bold text-4xl sm:text-5xl z-10">
           Wanna get in touch?
         </h2>
-        <div className="flex flex-row items-center gap-x-5">
+        <div className="flex flex-row items-center gap-x-5 z-10">
           <MailIcon className="text-orange-400" />
           <a
             href="mailto:alecaula96@gmail.com"
@@ -34,7 +34,7 @@ const Contacts = () => {
           </a>
         </div>
       </div>
-      <div>
+      <div className="z-50">
         <img
           src={isDark ? MeAndPiseDark : MeAndPiseLight}   // Change the image based on the theme (dark or light)
           className="sm:w-40 md:w-45 rounded-full max-sm:hidden shadow-xl"
