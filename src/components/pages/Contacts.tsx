@@ -2,6 +2,7 @@ import { MailIcon } from "lucide-react";
 import MeAndPiseLight from "../../assets/MeAndPise-light.jpeg";
 import MeAndPiseDark from "../../assets/MeAndPise-dark.jpeg";
 import { useTheme } from "@/context/ThemeContext";
+import MagneticFilings from "../MagneticFiling";
 
 // Final Contacts Section of the portfolio.
 // 
@@ -9,7 +10,13 @@ const Contacts = () => {
   const { isDark } = useTheme();
 
   return (
-    <div className="mt-20 mx-8 flex sm:flex-row justify-between items-center">
+    <div className="pt-20 mx-8 flex sm:flex-row justify-between items-center relative pb-20">
+
+      {/* Remove this for removing magnetic filing */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-screen z-0">
+        <MagneticFilings />
+      </div>
+
       <div className="flex flex-col gap-13">
         <h2 className="font-lato font-bold text-4xl sm:text-5xl">
           Wanna get in touch?

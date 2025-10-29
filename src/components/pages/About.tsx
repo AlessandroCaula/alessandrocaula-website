@@ -4,7 +4,7 @@ import AboutCard from "../common/AboutCard";
 // 
 const About = () => {
   return (
-    <div className="flex-center pt-10"> 
+    <div className="flex-center pt-0"> 
       {/* Render the AboutCard component */}
       <AboutCard
         imgPath="/koala.svg"

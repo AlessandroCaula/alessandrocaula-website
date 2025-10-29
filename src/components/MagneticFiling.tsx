@@ -1,17 +1,12 @@
+import { useTheme } from "@/context/ThemeContext";
+import { hexToRgba } from "@/lib/utils";
 import { useEffect, useRef } from "react";
 
 interface Line {
-  startX: number;
-  startY: number;
-  endX: number;
-  endY: number;
-  angle?: number;
-}
-
-interface Pointer {
-  x: number;
-  y: number;
-  active: boolean;
+  x: number; // Central x coordinate of the line
+  y: number; // Central y coordinate of the line
+  length: number;
+  angle: number;
 }
 
 const MagneticFilings = () => {
@@ -21,197 +16,168 @@ const MagneticFilings = () => {
   // This allows us to start and later stop the animation loop safely
   const rafRef = useRef<number | null>(null);
   // Store current pointer info
-  const pointerRef = useRef<Pointer>({
-    x: -9999, // Offscreen initial position
-    y: -9999,
-    active: false,
-  });
-  // Collection of all the lines.
+  const pointerRef = useRef({ x: 0, y: 0 });
+  // Collection of all the lines (filings).
   const linesRef = useRef<Line[]>([]);
+  // Retrieve theme
+  const { isDark } = useTheme();
 
-  // Teh effect runs once after the component mounts
+  // The effect runs once after the component mounts
   useEffect(() => {
-    const canvas = canvasRef.current; // Get the canvas element
+    // Get the canvas element
+    const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d"); // Get 2d drawing context
+    // Get 2d drawing context
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Handle high DPR screens (e.g. Retina)
     const DPR = window.devicePixelRatio || 1;
-
-    // These will track canvas size in CSS pixels
+    // Track canvas size in CSS pixels
     let width = 0;
     let height = 0;
 
     const lineLength = 20;
+    const spacing = 25;
     const lineWidth = 2;
-    const horizontalSpaceBetweenLines = 50;
-    const verticalSpaceBetweenLines = 50;
+    const fadeMargin = 150; // Distance from the edge where lines start fading
+    const maxAlpha = 0.5; // max opacity at center
+    const minAlpha = 0.0; // fully transparent at the edge
+    const filingColor = isDark ? "#909090" : "#bebebe";
 
-    // Function to resize the canvas whenever window size changes.
-    const resize = () => {
-      width = canvas.clientWidth; // Current width in CSS pixels
-      height = canvas.clientHeight; // Current height in CSS pixels
+    // Initialize lines grid
+    const initLines = () => {
+      linesRef.current = [];
+      // Compute number of rows and cols based on the spacing between the lines
+      const cols = Math.floor(width / spacing);
+      const rows = Math.floor(height / spacing);
 
-      // Scale the actual canvas pixel buffer by device pixel ration
-      canvas.width = Math.floor(width * DPR);
-      canvas.height = Math.floor(height * DPR);
-
-      // Reset the transform so drawing coordinates are correct
-      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-
-      // Call the initialization lines
-      initializeLines();
-    };
-
-    const initializeLines = () => {
-      linesRef.current = []; // clear old lines
-      // Compute the number of lines that can be fitted horizontally
-      const nHorizontalLines = Math.floor(
-        width / (horizontalSpaceBetweenLines + lineWidth)
-      );
-      // Compute the number of lines that can be fitted vertically
-      const nVerticalLines = Math.floor(height / verticalSpaceBetweenLines);
-
-      // now "initialize" each line in the canvas
-      for (let r = 0; r < nVerticalLines; r++) {
-        for (let c = 0; c < nHorizontalLines; c++) {
-          // Compute the X and Y coordinates of the current line
-          const currStartX =
-            horizontalSpaceBetweenLines + c * horizontalSpaceBetweenLines;
-          const currStartY =
-            verticalSpaceBetweenLines + r * verticalSpaceBetweenLines;
-          // Define the current line object
-          const currLine: Line = {
-            startX: currStartX,
-            startY: currStartY,
-            endX: currStartX,
-            endY: currStartY + lineLength,
-          };
-          // Push the line to the lines
-          linesRef.current.push(currLine);
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          // Initialize and push the lines to the lineRef.
+          linesRef.current.push({
+            x: c * spacing + spacing / 2,
+            y: r * spacing + spacing / 2,
+            length: lineLength,
+            angle: 0,
+          });
         }
       }
     };
 
-    // Handle mouse movement
-    const onPointerMove = (e: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect(); // Get canvas position relative to viewport
-      pointerRef.current.x = e.clientX - rect.left;
-      pointerRef.current.y = e.clientY - rect.top;
-      pointerRef.current.active = true;
+    // Function to resize the canvas whenever window size changes.
+    const resize = () => {
+      // Current width and height in CSS pixels
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      // Scale the actual canvas pixels by device pixel ratio
+      canvas.width = width * DPR;
+      canvas.height = height * DPR;
+      // Reset the transform so drawing coordinates are correct
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+      // Initialize pointerRef to point to the center of the canvas
+      pointerRef.current.x = width / 2;
+      pointerRef.current.y = width / 2;
+
+      // Initialize line grid
+      initLines();
     };
 
-    // Handle mouse leaving the canvas
-    const onPointerLeave = () => {
-      pointerRef.current.active = false;
-      pointerRef.current.x = -9999;
-      pointerRef.current.y = -9999;
-    };
-
-    // Handle touch input (mobile)
-    const onTouch = (e: TouchEvent) => {
-      if (e.touches && e.touches[0]) {
-        const t = e.touches[0];
-        onPointerMove(t as unknown as PointerEvent);
-      }
-    };
-
-    // Main logic. Updating the direction of the lines
-    const updatePosition = () => {
-      // Return if the mouse is not on the canvas
-      if (!pointerRef.current.active) return;
-
-      // Retrieve all the mouse X and Y coordinates
-      const mouseX = pointerRef.current.x;
-      const mouseY = pointerRef.current.y;
-
-      // Loop through all the lines
+    // Update line rotation angle
+    const updateLines = () => {
       linesRef.current.forEach((line) => {
-        // Compute the line center
-        const centerX = (line.startX + line.endX) / 2;
-        const centerY = (line.startY + line.endY) / 2;
-
-        // Direction from the center of the mouse
-        const dx = mouseX - centerX;
-        const dy = mouseY - centerY;
-
-        // Angle 
-        const angle = Math.atan2(dy, dx);
-
-        // Recompute endpoints centered on center
-        line.startX = centerX - Math.cos(angle) * (lineLength / 2);
-        line.startY = centerY - Math.sin(angle) * (lineLength / 2);
-
-        line.endX = centerX + Math.cos(angle) * (lineLength / 2);
-        line.endY = centerY + Math.sin(angle) * (lineLength / 2);
-
+        // Compute the new direction of the line.
+        const dx = pointerRef.current.x - line.x;
+        const dy = pointerRef.current.y - line.y;
+        line.angle = Math.atan2(dy, dx);
       });
     };
 
-    // Drawing the lines
     const draw = () => {
-      // Here we can clear or draw whatever we want every frame
+      // Clear the canvas
       ctx.clearRect(0, 0, width, height);
-      ctx.save();
 
-      const lines = linesRef.current;
-      lines.forEach((line) => {
+      linesRef.current.forEach((line) => {
+        // Compute distance to nearest edge. And fade (increase transparency) toward end of the canvas.
+        const distToEdge = Math.min(
+          line.x, // distance to left
+          width - line.x, // distance to right
+          line.y, // Distance to top
+          height - line.y // Distance to bottom
+        );
+        // Compute fade factor: 1 at center, 0 at edge
+        const fadeFactor = Math.min(distToEdge / fadeMargin, 1);
+        // Compute opacity based on fade factor
+        const alpha = minAlpha + (maxAlpha - minAlpha) * fadeFactor;
+        
+        // Start drawing line
         ctx.beginPath();
-        ctx.moveTo(line.startX, line.startY);
-        ctx.lineTo(line.endX, line.endY);
-        ctx.strokeStyle = "#FFAB00"; // Line color
+        // Start line point
+        ctx.moveTo(
+          line.x - Math.cos(line.angle) * (line.length / 2),
+          line.y - Math.sin(line.angle) * (line.length / 2)
+        );
+        // End line point
+        ctx.lineTo(
+          line.x + Math.cos(line.angle) * (line.length / 2),
+          line.y + Math.sin(line.angle) * (line.length / 2)
+        );
+        ctx.strokeStyle = hexToRgba(filingColor, alpha);
         ctx.lineWidth = lineWidth;
         ctx.stroke();
       });
     };
 
-    // Example of an animation loop
+    // Main animation loop.
     const loop = () => {
+      updateLines();
       draw();
-
-      updatePosition();
-
-      // Schedule next frame
       rafRef.current = requestAnimationFrame(loop);
     };
 
-    // Call it once now to initialize
-    resize();
-    // Initialize the lines in the canvas
-    initializeLines();
-
-    // Event listeners
-    window.addEventListener("resize", resize);
-    canvas.addEventListener("pointermove", onPointerMove);
-    canvas.addEventListener("pointerleave", onPointerLeave);
-    canvas.addEventListener("touchend", onTouch);
-
-    // --- Start the animation loop
-    rafRef.current = requestAnimationFrame(loop);
-
-    // Cleanup when component unmounts
-    return () => {
-      // Stop the animation if still running
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-
-      // Remove event listener
-      window.removeEventListener("resize", resize);
-      canvas.removeEventListener("pointermove", onPointerMove);
-      canvas.removeEventListener("pointerleave", onPointerLeave);
-      canvas.removeEventListener("touchend", onTouch);
+    // Handle mouse movement
+    const onPointerMove = (e: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      pointerRef.current.x = e.clientX - rect.left;
+      pointerRef.current.y = e.clientY - rect.top;
     };
-  }, []);
 
-  // Return the canvas element, filling the parent container
+    // Handle mouse leaving the canvas
+    const onPointerLeave = () => {
+      pointerRef.current.x = width ? width / 2 : -9999;
+      pointerRef.current.y = height ? height / 2 : -9999;
+    };
+
+    // Ensuring the resize happens after layout is settled
+    const initAfterLayout = () => {
+      resize();
+      loop();
+    };
+    const resizeObserver = new ResizeObserver(() => resize());
+    resizeObserver.observe(canvas);
+    requestAnimationFrame(initAfterLayout);
+
+    // Add event listeners
+    window.addEventListener("resize", resize);
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerleave", onPointerLeave);
+
+    return () => {
+      // Clean and remove event listeners
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerleave", onPointerLeave);
+    };
+  }, [isDark]);
+
   return (
-    <div className="w-full h-full relative overflow-hidden border-2">
-      <canvas
-        ref={canvasRef} // Link React ref to this canvas element
-        className="w-full h-full block"
-      />
-    </div>
+    <canvas
+      ref={canvasRef}
+      className="w-full h-full block pointer-events-none max-sm:hidden"
+    />
   );
 };
 
