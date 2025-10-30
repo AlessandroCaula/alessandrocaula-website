@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import ClosedProjectCard from "../common/ClosedProjectCard";
 import OpenProjectCard from "../common/OpenProjectCard";
 import { projects } from "../../data/personalProjects";
+import VerticalAnimatedCardWrapper from "../common/VerticalAnimatedCardWrapper";
 
 const Projects = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
@@ -37,21 +38,22 @@ const Projects = () => {
       <div className="grid gris-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2 mr-4 ml-4 mt-4">
         {/* Closed Cards */}
         {projects.map((project) => (
-          <ClosedProjectCard
-            key={project.id}
-            id={project.id}
-            title={project.title}
-            description={project.description}
-            technologies={project.technologies}
-            onClick={setSelectedId}
-          />
+          <VerticalAnimatedCardWrapper className="flex">
+            <ClosedProjectCard
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+              onClick={setSelectedId}
+            />
+          </VerticalAnimatedCardWrapper>
         ))}
       </div>
 
       <AnimatePresence>
         {selectedId && (
           <div>
-
             {/* Dimmed background */}
             <motion.div
               className="fixed inset-0 bg-black bg-opacity-50 z-150"
@@ -63,7 +65,6 @@ const Projects = () => {
 
             {/* Expanded card */}
             {openedProject()}
-
           </div>
         )}
       </AnimatePresence>
