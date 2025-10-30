@@ -140,7 +140,7 @@ const Home = () => {
             animate={{ opacity: [0, 1, 0], y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             viewport={{ once: true }}
-            className="absolute bottom-5 left-1/2 -translate-x-1 "
+            className="absolute bottom-7 left-1/2 -translate-x-1 "
           >
             <ArrowDownCircleIcon className="text-slate-400" />
           </motion.div>

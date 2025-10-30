@@ -37,7 +37,7 @@ const Experiences = () => {
             <br />Performed data preprocessing, feature selection, and model evaluation, and visualized results to extract meaningful biological insights.
           </p>
         }
-        skills={["Python", "NumPy", "Pandas", "Scikit-learn"]} // , "Jupyter Notebook"
+        skills={["Python", "NumPy", "Pandas", "Scikit-learn", "Jupyter Notebook"]} // , "Jupyter Notebook"
         link="https://github.com/AlessandroCaula/MasterThesis_Projects"
         xInitialOffset={300}
       />
