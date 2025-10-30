@@ -1,13 +1,7 @@
 import { useTheme } from "@/context/ThemeContext";
 import { hexToRgba } from "@/lib/utils";
+import type { Line } from "@/types";
 import { useEffect, useRef } from "react";
-
-interface Line {
-  x: number; // Central x coordinate of the line
-  y: number; // Central y coordinate of the line
-  length: number;
-  angle: number;
-}
 
 const MagneticFilings = () => {
   // Ref to directly access the <canvas> DOM element

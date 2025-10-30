@@ -1,13 +1,8 @@
+import type { SocialButtonProps } from "@/types"
 import { Button } from "../ui/button"
 
-interface props {
-  icon?: React.ReactNode;
-  label?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
-
 // Button used for the home page, with the links for LinkedIn, GitHub, Email, etc.
-const SocialButton = ({ icon = null, label = '', onClick = () => {}}: props) => {
+const SocialButton = ({ icon = null, label = '', onClick = () => {}}: SocialButtonProps) => {
   return (
     <Button className='social-button z-20' size="lg" onClick={onClick}>
       {icon}

@@ -1,14 +1,9 @@
+import type { VerticalAnimatedCardWrapperProps } from "@/types";
 import { motion, type Variants } from "motion/react";
-import type { ReactNode } from "react";
-
-interface props {
-  children: ReactNode;
-  className?: string;
-}
 
 // Wrapper for the vertical animation transition. The children component wrapped into it, will arrive from the bottom.
 // 
-const VerticalAnimatedCardWrapper = ({ children, className }: props) => {
+const VerticalAnimatedCardWrapper = ({ children, className }: VerticalAnimatedCardWrapperProps) => {
   return (
     <motion.div 
       className={className}

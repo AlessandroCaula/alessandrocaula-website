@@ -2,16 +2,9 @@ import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AnimatedCardWrapper from "./VerticalAnimatedCardWrapper";
+import type { AboutCardProps } from "@/types";
 
-interface props {
-  icon?: string;
-  imgPath?: string;
-  title: string;
-  text: React.ReactNode;
-  link?: string;
-}
-
-const AboutCard = ({ icon, imgPath, title, text, link = "" }: props) => {
+const AboutCard = ({ icon, imgPath, title, text, link = "" }: AboutCardProps) => {
   // Hook for the custom cursor
   const [customCursor, setCustomCursor] = useState(false);
 

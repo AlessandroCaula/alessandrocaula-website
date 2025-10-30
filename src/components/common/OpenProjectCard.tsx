@@ -1,17 +1,8 @@
 import { projectImages } from "@/assets/projects-images";
+import type { OpenProjectCardProps } from "@/types";
 import { MoveRight, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect } from "react";
-
-interface props {
-  id: number;
-  image?: keyof typeof projectImages | null;
-  title: string;
-  description: string;
-  github: string;
-  demo?: string;
-  onClick: React.Dispatch<React.SetStateAction<number | null>>;
-}
 
 const OpenProjectCard = ({
   id,
@@ -21,7 +12,7 @@ const OpenProjectCard = ({
   github,
   demo,
   onClick,
-}: props) => {
+}: OpenProjectCardProps) => {
   // Closing the opened project card when the esc button is clicked.
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

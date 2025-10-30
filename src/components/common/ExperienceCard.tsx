@@ -1,16 +1,6 @@
-import { type ReactNode } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import HorizontalAnimatedCardWrapper from "./HorizontalAnimatedCardWrapper";
-
-interface props {
-  role: string;
-  period: string;
-  company: string;
-  description: ReactNode;
-  skills: string[];
-  link?: string;
-  xInitialOffset: number;
-}
+import type { ExperienceCardProps } from "@/types";
 
 // Card used for the experiences section of the portfolio
 const ExperienceCard = ({
@@ -21,7 +11,7 @@ const ExperienceCard = ({
   skills,
   link,
   xInitialOffset,
-}: props) => {
+}: ExperienceCardProps) => {
   // The card is wrapped around the animation.div. This will allow the card to enter the screen from the sides
   return (
     <HorizontalAnimatedCardWrapper xInitialOffset={xInitialOffset}>

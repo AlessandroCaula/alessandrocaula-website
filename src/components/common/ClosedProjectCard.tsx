@@ -1,13 +1,6 @@
 import { motion } from "motion/react";
 import TechPill from "./TechPill";
-
-interface props {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  onClick: React.Dispatch<React.SetStateAction<number | null>>;
-}
+import type { ClosedProjectCardProps } from "@/types";
 
 // Component used for the closed cards project
 // 
@@ -17,7 +10,7 @@ const ClosedProjectCard = ({
   description,
   technologies,
   onClick,
-}: props) => {
+}: ClosedProjectCardProps) => {
   return (
     <motion.div
       key={id}

@@ -1,14 +1,4 @@
-import type { projectImages } from "@/assets/projects-images";
-
-interface projectType {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  image?: keyof typeof projectImages | null;
-  github: string;
-  demo?: string;
-}
+import type { projectType } from "@/types";
 
 // Collection of the personal project that are rendered in the Projects section.
 export const projects: projectType[] = [

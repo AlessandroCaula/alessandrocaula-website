@@ -1,14 +1,9 @@
+import type { CustomStandardSwitchProps } from "@/types";
 import { Switch } from "../ui/switch";
-
-interface props {
-  checked?: boolean;
-  onCheckedChange?: (checked: boolean) => void;
-  className?: string
-}
 
 // Custom standard switch
 // 
-const CustomStandardSwitch = ({ checked, onCheckedChange, className = "" }: props) => {
+const CustomStandardSwitch = ({ checked, onCheckedChange, className = "" }: CustomStandardSwitchProps) => {
   return (
     <div className={className}>
       <Switch

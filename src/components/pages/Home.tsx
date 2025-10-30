@@ -88,7 +88,7 @@ const Home = () => {
         </div>
         {/* Second line animation */}
         {/* Container that reserves the space for the second line animation */}
-        <div className="h-[calc(2em+0.5rem)] sm:h-[calc(2.5em+0.5rem)] md:h-[calc(3em+0.5rem)]">
+        <div className="h-[calc(2em+0.5rem)] sm:h-[calc(2.5em+0.5rem)] md:h-[calc(3em+0.5rem)] z-20">
           {showSecondLine && (
             <TypeAnimation
               sequence={["Software Developer and Bioinformatician", 500]}

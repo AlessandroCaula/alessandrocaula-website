@@ -1,12 +1,9 @@
 import { techColorCodes } from "@/lib/techColors";
 import { hexToRgba } from "@/lib/utils";
-
-interface props {
-  tech: string;
-}
+import type { TechPillProps } from "@/types";
 
 // Convert tech colors from hex values to rgba. This is used in order to be able to give some transparency to the colors.
-const TechPill = ({ tech }: props) => {
+const TechPill = ({ tech }: TechPillProps) => {
   // Retrieving the colors of the technologies used in the projects.
   const retrieveColorFromTech = (tech: string): string => {
     const hexColor: string | null = techColorCodes[tech];

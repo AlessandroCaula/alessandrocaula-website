@@ -1,10 +1,6 @@
 import * as motion from "motion/react-client";
 import type { Transition } from "motion/react";
-
-interface props {
-  title: string;
-  icons: string[];
-}
+import type { SkillsIconsRowProps } from "@/types";
 
 const springSkillsRow: Transition = {
   type: "spring",
@@ -14,7 +10,7 @@ const springSkillsRow: Transition = {
 
 // Row animation for the skills section.
 // 
-const SkillsIconsRow = ({ title, icons }: props) => {
+const SkillsIconsRow = ({ title, icons }: SkillsIconsRowProps) => {
   return (
     <div className="flex-center flex-col">
       <h3 className="text-center text-xl font-bold font-lato mb-1">
