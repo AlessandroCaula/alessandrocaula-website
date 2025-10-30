@@ -1,8 +1,9 @@
 import { projectImages } from "@/assets/projects-images";
 import type { OpenProjectCardProps } from "@/types";
-import { MoveRight, X } from "lucide-react";
+import { ArrowUpRight, Globe, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect } from "react";
+import { GrGithub } from "react-icons/gr";
 
 const OpenProjectCard = ({
   id,
@@ -62,16 +63,18 @@ const OpenProjectCard = ({
         {/* Rendering the buttons for GitHub repos and live demos */}
         <div className="flex flex-row gap-6 mb-2">
           <button className="project-button-links">
-            <a href={github} target="_blank">
+            <a href={github} target="_blank" className="gap-2">
+              <GrGithub className="max-sm:hidden" />
               GitHub
-              <MoveRight className="w-5" />
+              <ArrowUpRight className="w-5" />
             </a>
           </button>
           {demo && (
             <button className="project-button-links">
               <a href={demo} target="_blank">
+                <Globe className="max-sm:hidden w-4"/>
                 Demo
-                <MoveRight className="w-5" />
+                <ArrowUpRight className="w-5" />
               </a>
             </button>
           )}

@@ -133,7 +133,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
   }
 
   .project-button-links {
-    @apply custom-buttons w-26 h-10 rounded-lg mt-2 dark:ring-1 dark:ring-slate-100/20 dark:dark-custom-shadow dark:hover:dark-custom-shadow-hover;
+    @apply custom-buttons w-32 h-10 rounded-lg mt-2 dark:ring-1 dark:ring-slate-100/20 dark:dark-custom-shadow dark:hover:dark-custom-shadow-hover;
 
     & a {
       @apply font-bold flex-center justify-between w-full h-full px-3 text-foreground hover:text-secondary;

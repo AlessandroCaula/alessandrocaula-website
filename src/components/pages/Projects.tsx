@@ -38,9 +38,8 @@ const Projects = () => {
       <div className="grid gris-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2 mr-4 ml-4 mt-4">
         {/* Closed Cards */}
         {projects.map((project) => (
-          <VerticalAnimatedCardWrapper className="flex">
+          <VerticalAnimatedCardWrapper key={project.id} className="flex">
             <ClosedProjectCard
-              key={project.id}
               id={project.id}
               title={project.title}
               description={project.description}
