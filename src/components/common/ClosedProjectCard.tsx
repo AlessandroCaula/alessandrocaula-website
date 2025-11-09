@@ -15,7 +15,7 @@ const ClosedProjectCard = ({
     <motion.div
       key={id}
       layoutId={`card-${id}`}
-      className="card-style m-4 cursor-pointer pb-6"
+      className="card-style hover:ring-secondary/70 m-4 cursor-pointer pb-6"
       onClick={() => onClick(id)}
     >
       <div className="flex flex-col justify-between">

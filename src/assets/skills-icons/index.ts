@@ -30,9 +30,10 @@ import biopython from "./Biopython.svg";
 import tailwind from "./tailwindcss.svg";
 // import nextflow from "./file-type-nextflow.svg";
 import netlify from "./netlify.svg";
-import postman from "./postman.svg";
+// import postman from "./postman.svg";
 import express from "./express.svg";
 import reactrouter from "./reactrouter.svg";
+import curl from "./curl.svg";
 
 // Categories
 export const programmingLanguages = [
@@ -54,7 +55,8 @@ export const frameworks = [
   nodejs,
   express,
   mongodb,
-  postman,
+  curl,
+  // postman,
 ];
 
 export const machineLearningAndDataScience = [
