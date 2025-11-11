@@ -15,7 +15,7 @@ export const projects: projectType[] = [
   },
   {
     id: 2,
-    title: "Protein Reconstruction Loop",
+    title: "Protein Loop Reconstruction",
     description:
       "Developed a pipeline to identify and model missing loops in protein structures using CCD-based backbone reconstruction.",
     technologies: ["Python", "NumPy", "Biopython"],
