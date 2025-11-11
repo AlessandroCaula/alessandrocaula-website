@@ -36,7 +36,7 @@ export const projects: projectType[] = [
     id: 4,
     title: "Movies App",
     description:
-      "A web app to search and browse trending movies, featuring optimized queries, a responsive interface, and integrated backend data management.",
+      "A web app to search trending movies, with optimized queries, a responsive interface, and integrated backend data management.",
     technologies: ["JavaScript", "TailwindCSS", "React"],
     image: "MoviesApp",
     github:
