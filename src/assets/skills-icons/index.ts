@@ -35,58 +35,46 @@ import express from "./express.svg";
 import reactrouter from "./reactrouter.svg";
 import curl from "./curl.svg";
 
-// Categories
 export const programmingLanguages = [
-  csharp,
-  python,
-  javascript,
-  typescript,
-  html,
-  css,
-  bash,
-  rstudio,
+  { src: csharp, name: "C#" },
+  { src: python, name: "Python" },
+  { src: javascript, name: "JavaScript" },
+  { src: typescript, name: "TypeScript" },
+  { src: html, name: "HTML" },
+  { src: css, name: "CSS" },
+  { src: bash, name: "Bash" },
+  { src: rstudio, name: "R" },
 ];
 
 export const frameworks = [
-  dotnet,
-  react,
-  reactrouter,
-  tailwind,
-  nodejs,
-  express,
-  mongodb,
-  curl,
-  // postman,
+  { src: dotnet, name: ".NET" },
+  { src: react, name: "React" },
+  { src: reactrouter, name: "React Router" },
+  { src: tailwind, name: "Tailwind CSS" },
+  { src: nodejs, name: "Node.js" },
+  { src: express, name: "Express" },
+  { src: mongodb, name: "MongoDB" },
+  { src: curl, name: "cURL" },
 ];
-
-export const machineLearningAndDataScience = [
-  numpy,
-  pandas,
-  scikitlearn,
-  keras,
-];
-
-export const visualization = [matplotlib, seaborn, plotly, devexpress];
 
 export const dataScienceAndVisualization = [
-  numpy,
-  pandas,
-  scikitlearn,
-  // keras,
-  biopython,
-  matplotlib,
-  seaborn,
-  plotly,
-  devexpress,
+  { src: numpy, name: "NumPy" },
+  { src: pandas, name: "Pandas" },
+  { src: scikitlearn, name: "Scikit-Learn" },
+  { src: biopython, name: "Biopython" },
+  { src: matplotlib, name: "Matplotlib" },
+  { src: seaborn, name: "Seaborn" },
+  { src: plotly, name: "Plotly" },
+  { src: devexpress, name: "DevExpress" },
 ];
 
 export const OsAndTools = [
-  git,
-  vscode,
-  apple,
-  linux,
-  windows,
-  visualstudio,
-  amazonwebservices,
-  netlify,
+  { src: git, name: "Git" },
+  { src: vscode, name: "VS Code" },
+  { src: apple, name: "macOS" },
+  { src: linux, name: "Linux" },
+  { src: windows, name: "Windows" },
+  { src: visualstudio, name: "Visual Studio" },
+  { src: amazonwebservices, name: "AWS" },
+  { src: netlify, name: "Netlify" },
 ];
