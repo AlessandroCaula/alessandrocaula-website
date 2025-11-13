@@ -13,7 +13,7 @@ import matplotlib from "./matplotlib.svg";
 import plotly from "./plotly.svg";
 import seaborn from "./seaborn-icon.svg";
 import scikitlearn from "./scikitlearn.svg";
-import keras from "./keras.svg";
+// import keras from "./keras.svg";
 import nodejs from "./nodejs.svg";
 import mongodb from "./mongodb.svg";
 import git from "./git.svg";
