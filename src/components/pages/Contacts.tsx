@@ -28,7 +28,7 @@ const Contacts = () => {
             className="relative group text-foreground underline text-2xl hover:text-secondary w-fit font-roboto"
           >
             alecaula96@gmail.com
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-background text-foreground text-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-xl ring-1 ring-slate-500/40">
+            <span className="tooltip">
               Email me
             </span>
           </a>
