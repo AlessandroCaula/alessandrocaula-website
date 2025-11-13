@@ -48,11 +48,10 @@ export interface OpenProjectCardProps {
   onClick: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-type icons = {src: string, name: string}
-
+export type SkillIcon = {src: string, name: string}
 export interface SkillsIconsRowProps {
   title: string;
-  icons: icons[];
+  icons: SkillIcon[];
 }
 
 export interface SocialButtonProps {

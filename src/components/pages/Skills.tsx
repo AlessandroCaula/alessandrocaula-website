@@ -8,9 +8,10 @@ import {
   frameworks,
   OsAndTools,
 } from "@/assets/skills-icons";
+import type { SkillIcon } from "@/types";
 
-const shuffle = ([...arr]: string[]): string[] => {
-  return arr.sort(() => Math.random() - 0.5);
+const shuffle = (arr: SkillIcon[]): SkillIcon[] => {
+  return [...arr].sort(() => Math.random() - 0.5);
 };
 
 export const Skills = () => {
