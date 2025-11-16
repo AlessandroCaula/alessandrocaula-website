@@ -1,6 +1,6 @@
 # 🌐 [Personal Portfolio Website ↗](https://alessandrocaula.netlify.app/)
 
-This is my personal portfolio website, built with React and TypeScript, to showcase my software development projects, experience, and skills.
+This is my personal portfolio website, built with React and TypeScript, highlighting my software development projects, experience, and skills.
 
 ## Tech Stack
 
