@@ -89,7 +89,7 @@ Dark mode: A deep navy or charcoal background with soft orange for accents and t
   }
 
   .nav-bar {
-    @apply bg-foreground fixed top-1 left-1 right-1 md:left-15 md:right-15 lg:left-50 lg:right-50 flex items-center justify-between pr-5 rounded-xl h-11 max-sm:h-13 light-custom-shadow z-[100] transition-all duration-400 ease-in-out;
+    @apply bg-foreground fixed top-1 left-1 right-1 md:left-15 md:right-15 lg:left-50 lg:right-50 flex items-center justify-between pr-5 rounded-xl h-12 max-sm:h-13 light-custom-shadow z-[100] transition-all duration-400 ease-in-out;
 
     /* When the nav bar needs to be hidden */
     &.hide {

@@ -7,7 +7,6 @@ const MagneticFilings = () => {
   // Ref to directly access the <canvas> DOM element
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   // Ref to store the animation frame ID (for requestAnimationFrame)
-  // This allows us to start and later stop the animation loop safely
   const rafRef = useRef<number | null>(null);
   // Store current pointer info
   const pointerRef = useRef({ x: 0, y: 0 });

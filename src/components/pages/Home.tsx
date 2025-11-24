@@ -27,14 +27,16 @@ const Home = () => {
 
   // Toast to show the animation popup when the user clicks the email button contact.
   const copyToClipboard = (email: string) => {
+    const backgroundColor = "#ffffff"; // isDark ? "#1e1e1e" : 
+    const textColor = "#1e1e1e"; // isDark ? "#ffffff" :
     navigator.clipboard
       .writeText(email)
       .then(() => {
         toast.success("Copied to clipboard", {
           style: {
             borderRadius: "50px",
-            background: "#fff",
-            color: "#333",
+            background: backgroundColor, //"#fff",
+            color: textColor, //"#333",
           },
         });
       })
@@ -44,8 +46,8 @@ const Home = () => {
           icon: "✖️",
           style: {
             borderRadius: "50px",
-            background: "#fff",
-            color: "#333",
+            background: backgroundColor, //"#fff",
+            color: textColor, //"#333",
           },
         });
       });
