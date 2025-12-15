@@ -60,15 +60,15 @@ const Home = () => {
         <MagneticFilings />
       </div>
 
-      <div className="flex-center flex-col margin-top pb-8">
+      <div className="flex-center flex-col margin-top pb-8 2xl:mt-34">
         <img
-          className="w-68 custom-shadow rounded-full max-sm:w-56 z-10"
+          className="w-68 custom-shadow rounded-full max-sm:w-56 z-10 2xl:w-78 2xl:mb-12"
           src={isDark ? DarkModeProfilePic : LightModeProfilePic}
           alt="Alessandro Caula Picture"
         />
 
         {/* Animate text */}
-        <div className="flex gap-2">
+        <div className="flex gap-4">
           <TypeAnimation
             sequence={["Hi!", () => setShowFirstLine(true)]}
             wrapper="h1"
@@ -98,13 +98,13 @@ const Home = () => {
               speed={50}
               cursor={false}
               repeat={0} // Avoid looping
-              className="font-inter sm:mt-8 mt-6 font-light"
+              className="font-inter sm:mt-8 mt-6 2xl:mt-20 font-light"
             />
           )}
         </div>
 
         {/* Render the buttons for the contacts and "socials" */}
-        <div className="mt-25 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-8 max-sm:px-8">
+        <div className="mt-25 2xl:mt-46 w-full flex-center sm:space-x-4 md:space-x-8 max-sm:flex-col max-sm:space-y-8 max-sm:px-8">
           <SocialButton
             icon={<BsLinkedin className={!isDark ? "text-[#0967C2]" : ""} />}
             label="LinkedIn"

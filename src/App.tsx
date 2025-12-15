@@ -16,7 +16,7 @@ const App = () => {
       <Nav />
       {/* Vertical Scroll */}
       <main>
-        <section id="home">
+        <section id="home" className="min-h-screen flex justify-center">
           <Home />
         </section>
         <section id="about">
