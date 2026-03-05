@@ -56,7 +56,7 @@ export const Skills = () => {
         setOrderFrameworks(shuffle(orderFrameworks));
         setOrderDsAndVisualization(shuffle(orderDsAndVisualization));
         setOrderOsAndTools(shuffle(orderOsAndTools));
-      }, 1500);
+      }, 3000);
 
       return () => clearTimeout(timeout);
     } else {
