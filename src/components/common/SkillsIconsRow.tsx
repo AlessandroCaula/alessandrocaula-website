@@ -4,8 +4,8 @@ import type { SkillsIconsRowProps } from "@/types";
 
 const springSkillsRow: Transition = {
   type: "spring",
-  damping: 25,
-  stiffness: 300,
+  damping: 30,
+  stiffness: 200,
 };
 
 // Row animation for the skills section.
