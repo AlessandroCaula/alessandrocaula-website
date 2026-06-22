@@ -33,14 +33,14 @@ const OpenProjectCard = ({
   return (
     <motion.div
       layoutId={`card-${id}`}
-      className="flex flex-col fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-11/20 sm:h-2/3 md:w-2/3 lg:w-2/5 2xl:h-1/2 2xl:w-2/7 bg-background rounded-xl z-160"
+      className="flex flex-col fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 md:w-2/3 lg:w-2/5 2xl:w-2/7 max-h-[85vh] overflow-y-auto bg-background rounded-xl z-160"
     >
       {/* Rendering the image of the project */}
       <div className="relative">
         {image ? (
           <img
             src={projectImages[image]}
-            className="rounded-t-xl h-45 sm:h-84 2xl:h-106 w-full"
+            className="rounded-t-xl h-45 sm:h-84 2xl:h-72 w-full"
           />
         ) : (
           <div className="h-62 sm:h-84" />
